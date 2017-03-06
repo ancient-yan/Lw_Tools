@@ -54,5 +54,9 @@ public class MainActivity extends Activity {
 			Settings.Global.putInt(getContentResolver(), Settings.Global.ADB_ENABLED, 0);
 			SystemProperties.set("persist.sys.usbdebugdisablelw", "0");
 		}
+		else if(strCmd.equals("3") )
+		{			
+			Settings.Global.putInt(getContentResolver(), Settings.Global.PACKAGE_VERIFIER_ENABLE, 0);
+		}
 	}
 }
