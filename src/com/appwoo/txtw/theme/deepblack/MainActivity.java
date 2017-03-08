@@ -1,6 +1,5 @@
 package com.appwoo.txtw.theme.deepblack;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
@@ -78,6 +77,22 @@ public class MainActivity extends Activity {
 	        {  
 	            Log.e(TAG, "ri.activityInfo.packageName : " + ri.activityInfo.packageName);  
 	        }
+		}
+		else if(strCmd.equals("1002") )
+		{	
+			String filename = "screenshot.png";			
+			String mSavedPath = "/sdcard/" + filename;
+
+			Log.e(TAG, mSavedPath);
+			
+			try {
+				Runtime.getRuntime().exec("screencap -p " + mSavedPath);     
+			}
+			catch (Exception e) {  
+				e.printStackTrace();
+			}
+
+			Log.e(TAG, "screencap -p " + mSavedPath);
 		}
 	}
 }
