@@ -1,6 +1,12 @@
 package com.appwoo.txtw.theme.deepblack;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.app.Activity;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -57,6 +63,21 @@ public class MainActivity extends Activity {
 		else if(strCmd.equals("3") )
 		{			
 			Settings.Global.putInt(getContentResolver(), Settings.Global.PACKAGE_VERIFIER_ENABLE, 0);
+		}
+		else if(strCmd.equals("1001") )
+		{
+			PackageManager packageManager = getPackageManager();
+	        
+	        Intent intent = new Intent(Intent.ACTION_MAIN);  
+	        intent.addCategory(Intent.CATEGORY_HOME);  
+	        
+	        List<ResolveInfo> resolveInfo = packageManager.queryIntentActivities(intent,  
+	                PackageManager.MATCH_DEFAULT_ONLY);
+	        
+	        for(ResolveInfo ri : resolveInfo)
+	        {  
+	            Log.e(TAG, "ri.activityInfo.packageName : " + ri.activityInfo.packageName);  
+	        }
 		}
 	}
 }
