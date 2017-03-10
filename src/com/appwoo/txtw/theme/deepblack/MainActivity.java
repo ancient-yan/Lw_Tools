@@ -1,5 +1,6 @@
 package com.appwoo.txtw.theme.deepblack;
 
+import java.util.ArrayList;
 import java.util.List;
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -50,7 +51,26 @@ public class MainActivity extends Activity {
 		
 		if(null == strCmd) return;
 		
-		Log.e(TAG, " : " + strCmd);
+		Log.e(TAG, " strCmd : " + strCmd);
+		
+		String[] Vars = strCmd.split(" ");
+		
+		List lVars = new ArrayList(); 
+		
+		for(int i =0; i < Vars.length ; i++)
+		{
+			String strTmp = Vars[i].trim();
+			if(!strTmp.isEmpty() )
+			{
+				lVars.add(strTmp);
+				Log.e(TAG, "Vars : [" +  Vars[i] + "]");
+			}
+		}
+		
+		if(lVars.size() < 1) return;
+		strCmd = (String)lVars.get(0);
+		
+		Log.e(TAG, " strCmd : " + strCmd);
 		
 		if(strCmd.equals("1") )
 		{
