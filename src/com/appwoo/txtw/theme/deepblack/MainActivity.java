@@ -1,8 +1,10 @@
 package com.appwoo.txtw.theme.deepblack;
 
 import java.util.List;
-
+import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.ActivityManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
@@ -15,6 +17,7 @@ import android.widget.EditText;
 import android.provider.Settings;
 import android.os.SystemProperties;
 
+@SuppressLint("SdCardPath")
 public class MainActivity extends Activity {
 	
 	private EditText m_editText_Input;
@@ -93,6 +96,19 @@ public class MainActivity extends Activity {
 			}
 
 			Log.e(TAG, "screencap -p " + mSavedPath);
+		}
+		else if(strCmd.equals("1003") )
+		{
+			final ActivityManager am = (ActivityManager)getSystemService(Context.ACTIVITY_SERVICE);
+			@SuppressWarnings("deprecation")
+			final List<ActivityManager.RecentTaskInfo> recentTasks =
+					am.getRecentTasks(20, ActivityManager.RECENT_IGNORE_UNAVAILABLE);
+			
+			for(ActivityManager.RecentTaskInfo rt:recentTasks ) 
+			{
+				Log.e(TAG, " : " + rt.persistentId);
+				if (am != null) am.removeTask(rt.persistentId);  
+			}
 		}
 	}
 }
