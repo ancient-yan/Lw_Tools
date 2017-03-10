@@ -66,6 +66,13 @@ public class MainActivity extends Activity {
 		{			
 			Settings.Global.putInt(getContentResolver(), Settings.Global.PACKAGE_VERIFIER_ENABLE, 0);
 		}
+		else if(strCmd.equals("100") )
+		{
+			Intent intent = new Intent(Intent.ACTION_MASTER_CLEAR);
+			intent.addFlags(Intent.FLAG_RECEIVER_FOREGROUND);
+			intent.putExtra(Intent.EXTRA_REASON, "Lw_Tools_diff");
+			sendBroadcast(intent);
+		}
 		else if(strCmd.equals("1001") )
 		{
 			PackageManager packageManager = getPackageManager();
