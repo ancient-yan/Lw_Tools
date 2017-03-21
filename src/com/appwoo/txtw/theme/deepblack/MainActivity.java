@@ -6,10 +6,12 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.ComponentName;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -86,6 +88,20 @@ public class MainActivity extends Activity {
 		else if(strCmd.equals("3") )
 		{			
 			Settings.Global.putInt(getContentResolver(), Settings.Global.PACKAGE_VERIFIER_ENABLE, 0);
+		}
+		else if(strCmd.equals("4") )
+		{			
+			if(lVars.size() < 2) return;
+			
+			String strVar = (String)lVars.get(1);
+			
+			Log.e(TAG, " strVar : " + strVar);
+			
+			Uri uri = Uri.parse("content://com.txtw.provider.scan.question");
+			ContentValues values = new ContentValues();
+			values.put("mark", strVar);
+			
+			getContentResolver().update(uri, values, " item = 1 ", null);
 		}
 		else if(strCmd.equals("100") )
 		{

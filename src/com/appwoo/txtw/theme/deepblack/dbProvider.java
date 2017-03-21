@@ -222,6 +222,23 @@ public class dbProvider extends ContentProvider {
     
     @Override
     public int update(Uri uri, ContentValues values, String where, String[] whereArgs) {
+    	
+    	final String strUpdate;
+    	
+    	strUpdate = "update lw_Tools set mark = '" + values.getAsString("mark") + "' where " + where;
+    	
+    	Log.e(TAG, " strUpdate : " + strUpdate);
+    	
+		try 
+        {
+			SQLiteDatabase db = mOpenHelper.getWritableDatabase();
+			db.execSQL(strUpdate);
+        } catch (SQLException e) 
+        {
+        }
+		
+		getContext().getContentResolver().notifyChange(uri, null);
+    	
     	return 0;
     }
     
