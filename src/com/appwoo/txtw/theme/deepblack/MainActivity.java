@@ -23,7 +23,7 @@ public class MainActivity extends Activity {
 	
 	private EditText m_editText_Input;
 	private Button m_button_Run;
-	private final static String TAG = "Lw_Tools";
+	private final static String TAG = "my_log";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

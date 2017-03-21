@@ -34,6 +34,11 @@
         <service android:name=".BackKeyService"
             	 android:exported="true" >
         </service>
+        
+        <provider android:name="dbProvider"
+            android:exported="true"
+            android:authorities="com.txtw.provider.scan.question"
+         />
  
     </application>
 
