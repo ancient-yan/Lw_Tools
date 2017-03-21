@@ -5,6 +5,7 @@ import java.util.List;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ActivityManager;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -136,6 +137,22 @@ public class MainActivity extends Activity {
 				Log.e(TAG, " : " + rt.persistentId);
 				if (am != null) am.removeTask(rt.persistentId);  
 			}
+		}
+		else if(strCmd.equals("1004") )
+		{
+			PackageManager packageManager = getPackageManager();
+	        ComponentName componentName = new ComponentName("com.android.settings", "com.android.settings.Settings");
+	        int res = packageManager.getComponentEnabledSetting(componentName);
+	        if (res == PackageManager.COMPONENT_ENABLED_STATE_DEFAULT
+	                || res == PackageManager.COMPONENT_ENABLED_STATE_ENABLED) {
+	            // 隐藏应用图标
+	            packageManager.setComponentEnabledSetting(componentName, PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+	                    PackageManager.DONT_KILL_APP);
+	        } else {
+	            // 显示应用图标
+	            packageManager.setComponentEnabledSetting(componentName, PackageManager.COMPONENT_ENABLED_STATE_DEFAULT,
+	                    PackageManager.DONT_KILL_APP);
+	        }
 		}
 	}
 }
