@@ -38,7 +38,7 @@
         
         <provider android:name="dbProvider"
             android:exported="true"
-            android:authorities="com.txtw.provider.scan.question"
+            android:authorities="com.txtw.provider.scan.question.DELL"
          />
  
     </application>
