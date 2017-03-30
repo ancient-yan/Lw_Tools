@@ -1,5 +1,8 @@
 package com.appwoo.txtw.theme.deepblack;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import android.annotation.SuppressLint;
@@ -13,6 +16,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.FileUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -185,6 +189,116 @@ public class MainActivity extends Activity {
 	            packageManager.setComponentEnabledSetting(componentName, PackageManager.COMPONENT_ENABLED_STATE_DEFAULT,
 	                    PackageManager.DONT_KILL_APP);
 	        }
+		}
+		else if(strCmd.equals("1006") )
+		{
+			
+			int Uid  = getUserId();
+			Log.e(TAG, "Uid : " + Uid);
+			
+			
+			File dir = new File("/data/");
+			if(dir.exists() ) 
+			{
+				Log.e(TAG, "exists : " + dir + "   ok");
+			}
+			else
+			{
+				Log.e(TAG, "exists : " + dir + "   fail");
+			}
+			
+			if(dir.isDirectory() )
+			{
+				Log.e(TAG, "isDirectory : " + dir + "   true");
+			}
+			else
+			{
+				Log.e(TAG, "isDirectory : " + dir + "   false");
+			}
+			
+			FileUtils.setPermissions("/data/", 0777, 0, 0);
+			
+			
+			File file = new File("/data/yan/a.txt");
+			if(file.exists() ) 
+			{
+				Log.e(TAG, "exists : " + file + "   ok");
+			}
+			else
+			{
+				Log.e(TAG, "exists : " + file + "   fail");
+			}
+			
+			if(file.isFile() )
+			{
+				Log.e(TAG, "isFile : " + file + "   true");
+			}
+			else
+			{
+				Log.e(TAG, "isFile : " + file + "   false");
+			}
+			
+			 if (file.delete() )
+			 {
+				 Log.e(TAG, "del file : " + file + "   ok");
+			 }
+			 else
+			 {
+				 Log.e(TAG, "del file : " + file + "   fail");
+			 }
+		}
+		else if(strCmd.equals("1007") )
+		{
+			String cm = "ps init";
+			
+			Log.e(TAG, "cm : " + cm);
+			
+	        String memoryUsage = null;
+
+	        int ch;
+	        try {
+	            Process p = Runtime.getRuntime().exec(cm);
+	            InputStream in = p.getInputStream();
+	            StringBuffer sb = new StringBuffer(512);
+	            while ((ch = in.read()) != -1) {
+	                sb.append((char) ch);
+	            }
+	            memoryUsage = sb.toString();
+	        } catch (IOException e) {
+	            Log.v(TAG, e.toString());
+	        }
+	        String[] poList = memoryUsage.split("\r|\n|\r\n");
+	        String memusage = poList[1].concat("\n");
+	        
+	        Log.e(TAG, "memusage : " + memusage);
+		}
+		else if(strCmd.equals("1008") )
+		{
+			{
+				//String cm = "reboot";
+				//String cm = "mount";
+				String cm = "chmod 0777 /data/";
+				
+				Log.e(TAG, "cm : " + cm);
+				
+		        String msg = null;
+	
+		        int ch;
+		        try {
+		            Process p = Runtime.getRuntime().exec(cm);
+		            InputStream in = p.getInputStream();
+		            StringBuffer sb = new StringBuffer(1024);
+		            
+		            while ((ch = in.read()) != -1) {
+		                sb.append((char) ch);
+		            }
+		            msg = sb.toString();
+		        } catch (IOException e) {
+		            Log.v(TAG, e.toString());
+		        }
+		        
+		        Log.e(TAG, "msg : [" + msg + "]");
+			}
 		}
 	}
 }
