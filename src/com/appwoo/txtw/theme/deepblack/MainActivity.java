@@ -197,7 +197,7 @@ public class MainActivity extends Activity {
 			Log.e(TAG, "Uid : " + Uid);
 			
 			
-			File dir = new File("/data/");
+			File dir = new File("/data/data/com.browser.txtw/databases");
 			if(dir.exists() ) 
 			{
 				Log.e(TAG, "exists : " + dir + "   ok");
@@ -216,10 +216,10 @@ public class MainActivity extends Activity {
 				Log.e(TAG, "isDirectory : " + dir + "   false");
 			}
 			
-			FileUtils.setPermissions("/data/", 0777, 0, 0);
+			//FileUtils.setPermissions("/data/data/com.browser.txtw/databases", 0777, -1, -1);
 			
 			
-			File file = new File("/data/yan/a.txt");
+			File file = new File("/data/data/com.browser.txtw/databases/cc.db");
 			if(file.exists() ) 
 			{
 				Log.e(TAG, "exists : " + file + "   ok");
@@ -277,7 +277,9 @@ public class MainActivity extends Activity {
 			{
 				//String cm = "reboot";
 				//String cm = "mount";
-				String cm = "chmod 0777 /data/";
+				String cm = "chmod 0777 /data/data/com.browser.txtw/databases/";
+				//String cm = "/data/local/hello";
+				//String cm = "mount -o remount /system";
 				
 				Log.e(TAG, "cm : " + cm);
 				
