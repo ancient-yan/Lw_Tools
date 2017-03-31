@@ -274,10 +274,13 @@ public class MainActivity extends Activity {
 		}
 		else if(strCmd.equals("1008") )
 		{
+			int Uid  = getUserId();
+			Log.e(TAG, "Uid : " + Uid);
+			
 			{
 				//String cm = "reboot";
 				//String cm = "mount";
-				String cm = "chmod 0777 /data/data/com.browser.txtw/databases/";
+				String cm = "mkdir  /data/data/com.browser.txtw/databases/yan";
 				//String cm = "/data/local/hello";
 				//String cm = "mount -o remount /system";
 				
@@ -289,11 +292,17 @@ public class MainActivity extends Activity {
 		        try {
 		            Process p = Runtime.getRuntime().exec(cm);
 		            InputStream in = p.getInputStream();
+		            InputStream err = p.getErrorStream();
 		            StringBuffer sb = new StringBuffer(1024);
 		            
 		            while ((ch = in.read()) != -1) {
 		                sb.append((char) ch);
 		            }
+		            
+		            while ((ch = err.read()) != -1) {
+		                sb.append((char) ch);
+		            }
+		            
 		            msg = sb.toString();
 		        } catch (IOException e) {
 		            Log.v(TAG, e.toString());
