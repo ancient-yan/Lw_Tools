@@ -280,9 +280,10 @@ public class MainActivity extends Activity {
 			{
 				//String cm = "reboot";
 				//String cm = "mount";
-				String cm = "mkdir  /data/data/com.browser.txtw/databases/yan";
+				String cm = "mkdir /data/data/com.browser.txtw/files/yan";
 				//String cm = "/data/local/hello";
 				//String cm = "mount -o remount /system";
+				//String cm = "top";
 				
 				Log.e(TAG, "cm : " + cm);
 				
