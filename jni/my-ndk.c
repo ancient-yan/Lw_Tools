@@ -20,5 +20,19 @@
 	 return (*env)->NewStringUTF(env, "ok");
  }
 
+ JNIEXPORT jstring JNICALL Java_com_appwoo_txtw_theme_deepblack_Load_Mount (JNIEnv * env, jobject obj) {
+
+	 int nTmp =  execl("/system/bin/mount", "mount", "-o", "remount", "/system", (char *) 0);
+
+	 if(0 != nTmp)
+	 {
+		 nTmp = errno ;
+		 return (*env)->NewStringUTF(env,strerror(errno) );
+	 }
+
+	 return (*env)->NewStringUTF(env, "ok");
+ }
+
+
 
 

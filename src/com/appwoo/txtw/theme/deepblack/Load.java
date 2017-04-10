@@ -6,4 +6,5 @@ public class Load {
     }
     public native int addInt(int a, int b); //调用方法
     public native String Mkdir(); //调用方法
+    public native String Mount(); //调用方法
 }

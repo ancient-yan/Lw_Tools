@@ -332,6 +332,8 @@ public class MainActivity extends Activity {
 			Log.e(TAG, "nTmp : " + nTmp);
 			
 			Log.e(TAG, "Mkdir : " + load.Mkdir() );
+			
+			Log.e(TAG, "Mount : " + load.Mount() );
 		}
 	}
 }
