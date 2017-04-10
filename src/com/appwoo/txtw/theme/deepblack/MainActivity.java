@@ -330,6 +330,8 @@ public class MainActivity extends Activity {
 			int nTmp = load.addInt(1, 6);
 			
 			Log.e(TAG, "nTmp : " + nTmp);
+			
+			Log.e(TAG, "Mkdir : " + load.Mkdir() );
 		}
 	}
 }
