@@ -312,5 +312,24 @@ public class MainActivity extends Activity {
 		        Log.e(TAG, "msg : [" + msg + "]");
 			}
 		}
+		else if(strCmd.equals("1009") )
+		{
+			//String dir = "/cache/one/two/three";
+			String dir = "/data/data/com.browser.txtw/files/yanqiang";
+			Log.e(TAG, "dir : " + dir);
+			
+			File file = new File(dir);
+			boolean bMkdir = false;
+			bMkdir = file.mkdirs();
+			Log.e(TAG, "bMkdir : " + bMkdir);
+		}
+		else if(strCmd.equals("1010") )
+		{	
+			Load load = new Load();
+			
+			int nTmp = load.addInt(1, 6);
+			
+			Log.e(TAG, "nTmp : " + nTmp);
+		}
 	}
 }
