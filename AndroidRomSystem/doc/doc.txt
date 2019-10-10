@@ -1,0 +1,5 @@
+南京领创信息科技有限公司
+
+adb root
+
+adb shell am startservice -n cn.com.rom.system/cn.com.rom.system.service.CmdService --ei cmd 1

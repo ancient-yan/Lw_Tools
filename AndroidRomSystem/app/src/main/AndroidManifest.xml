@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:sharedUserId="android.uid.system"
+    package="cn.com.rom.system">
+
+    <uses-permission android:name="android.permission.PACKAGE_VERIFICATION_AGENT"
+        tools:ignore="ProtectedPermissions" />
+
+    <application
+        android:name="cn.com.rom.system.MyApplication"
+        android:persistent="false"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name="cn.com.rom.system.receiver.PackageVerifyReceiver"
+            android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_NEEDS_VERIFICATION" />
+                <data android:mimeType="application/vnd.android.package-archive"/>
+            </intent-filter>
+        </receiver>
+
+        <provider android:name="cn.com.rom.system.dbProvider"
+            android:exported="false"
+            android:authorities="cn.com.rom.system.provider"
+            />
+
+        <service
+            android:name="cn.com.rom.system.service.CmdService"
+            android:enabled="true"
+            android:exported="false"></service>
+
+        <service
+            android:name="cn.com.rom.system.service.haierMDMService"
+            android:exported="true"
+            android:process=":haierMDM">
+            <intent-filter>
+                <action android:name="cn.com.rom.system.service.MDM" />
+            </intent-filter>
+        </service>
+
+        <receiver android:name="cn.com.rom.system.receiver.dpmReceiver"
+            android:label="rom system"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data android:name="android.app.device_admin"
+                android:resource="@xml/dpm" />
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

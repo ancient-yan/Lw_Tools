@@ -1,0 +1,8 @@
+persist.sys.disablehomekey
+persist.sys.disablebackkey
+persist.sys.disableappkey
+persist.sys.disablevolumekey
+persist.sys.disablepowerkey
+
+persist.sys.disablebluetooth
+persist.sys.disablesdcard
