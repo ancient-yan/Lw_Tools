@@ -22,7 +22,7 @@ allprojects {
 
     gradle.projectsEvaluated {
         tasks.withType(JavaCompile) {
-            options.compilerArgs.add('-Xbootclasspath/p:D:\\gitee\\EngineerMode\\jar\\framework_Android9.jar')
+            options.compilerArgs.add('-Xbootclasspath/p:..\\..\\..\\gitee\\EngineerMode\\jar\\framework_Android9.jar')
         }
     }
 }

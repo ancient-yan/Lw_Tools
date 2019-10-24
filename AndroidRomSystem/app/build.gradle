@@ -24,7 +24,7 @@ android {
 
     signingConfigs {
         haier {
-            storeFile file('E:\\github\\private_as\\doc\\key\\haier_20190726.keystore')
+            storeFile file('..\\..\\..\\private_as\\doc\\key\\haier_20190726.keystore')
             storePassword 'www.haier.com'
             keyAlias 'haier'
             keyPassword 'www.haier.com'
@@ -52,7 +52,7 @@ android {
 }
 
 dependencies {
-    compileOnly files('D:\\gitee\\EngineerMode\\jar\\framework_Android9.jar')
+    compileOnly files('..\\..\\..\\..\\gitee\\EngineerMode\\jar\\framework_Android9.jar')
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
