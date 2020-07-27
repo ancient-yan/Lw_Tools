@@ -201,7 +201,7 @@ public class romUtil {
 
         try {
             DevicePolicyManager mDPM = (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
-            mDPM.setPackagesSuspended(MyApplication.who, strPackageNames.toArray(new String[strPackageNames.size()]), bSuspend);
+//            mDPM.setPackagesSuspended(MyApplication.who, strPackageNames.toArray(new String[strPackageNames.size()]), bSuspend);
             return true;
         } catch (Exception e) {
             Log.e(TAG, "SetAppSuspendDpm.Exception : " + e);
@@ -239,7 +239,7 @@ public class romUtil {
 
         try {
             DevicePolicyManager mDPM = (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
-            mDPM.setCameraDisabled(MyApplication.who, bDisable);
+//            mDPM.setCameraDisabled(MyApplication.who, bDisable);
         } catch (Exception e) {
             Log.e(TAG, "setCameraDisabled.Exception : " + e);
         }
@@ -250,7 +250,7 @@ public class romUtil {
 
         try {
             DevicePolicyManager mDPM = (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
-            mDPM.setStatusBarDisabled(MyApplication.who, bDisable);
+//            mDPM.setStatusBarDisabled(MyApplication.who, bDisable);
         } catch (Exception e) {
             Log.e(TAG, "setStatusBarDisabled.Exception : " + e);
         }
@@ -290,7 +290,7 @@ public class romUtil {
 
         try {
             DevicePolicyManager mDPM = (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
-            mDPM.setStatusBarDisabled(MyApplication.who, bDisable);
+//            mDPM.setStatusBarDisabled(MyApplication.who, bDisable);
         } catch (Exception e) {
             Log.e(TAG, "setStatusBarDisabledDpm.Exception : " + e);
         }
