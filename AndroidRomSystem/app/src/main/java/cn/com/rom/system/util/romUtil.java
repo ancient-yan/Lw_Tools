@@ -1,11 +1,8 @@
 package cn.com.rom.system.util;
 
-import android.app.ActivityManager;
 import android.app.PendingIntent;
 import android.app.StatusBarManager;
-import android.app.admin.DevicePolicyManager;
 import android.content.BroadcastReceiver;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.IPackageDeleteObserver;
@@ -28,9 +25,6 @@ import java.io.OutputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Arrays;
-import java.util.List;
-
-import cn.com.rom.system.MyApplication;
 
 public class romUtil {
     private static final String TAG = "rom_system";
@@ -193,69 +187,6 @@ public class romUtil {
         return false;
     }
 
-    public static boolean SetAppSuspendDpm(Context context, List<String> strPackageNames, boolean bSuspend) {
-        if (null == context) return false;
-        if (null == strPackageNames) return false;
-
-        if (strPackageNames.contains(context.getPackageName())) return false;
-
-        try {
-            DevicePolicyManager mDPM = (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
-//            mDPM.setPackagesSuspended(MyApplication.who, strPackageNames.toArray(new String[strPackageNames.size()]), bSuspend);
-            return true;
-        } catch (Exception e) {
-            Log.e(TAG, "SetAppSuspendDpm.Exception : " + e);
-        }
-
-        return false;
-    }
-
-    public static void setActiveAdmin(Context context, ComponentName componentName, boolean refreshing) {
-        if (null == context) return;
-        if (null == componentName) return;
-
-        try {
-            DevicePolicyManager mDPM = (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
-            mDPM.setActiveAdmin(componentName, refreshing);
-        } catch (Exception e) {
-            Log.e(TAG, "setActionAdmin.Exception : " + e);
-        }
-    }
-
-    public static void setProfileOwner(Context context, ComponentName componentName) {
-        if (null == context) return;
-        if (null == componentName) return;
-
-        try {
-            DevicePolicyManager mDPM = (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
-            mDPM.setProfileOwner(componentName, "rom system", 0);
-        } catch (Exception e) {
-            Log.e(TAG, "setProfileOwner.Exception : " + e);
-        }
-    }
-
-    public static void setCameraDisabled(Context context, boolean bDisable) {
-        if (null == context) return;
-
-        try {
-            DevicePolicyManager mDPM = (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
-//            mDPM.setCameraDisabled(MyApplication.who, bDisable);
-        } catch (Exception e) {
-            Log.e(TAG, "setCameraDisabled.Exception : " + e);
-        }
-    }
-
-    public static void setStatusBarDisabled(Context context, boolean bDisable) {
-        if (null == context) return;
-
-        try {
-            DevicePolicyManager mDPM = (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
-//            mDPM.setStatusBarDisabled(MyApplication.who, bDisable);
-        } catch (Exception e) {
-            Log.e(TAG, "setStatusBarDisabled.Exception : " + e);
-        }
-    }
-
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     private static final int STATUS_BAR_DISABLE_MASK =
             StatusBarManager.DISABLE_EXPAND |
@@ -282,60 +213,6 @@ public class romUtil {
             } catch (RemoteException e) {
                 Log.e(TAG, "setStatusBarDisabled28.RemoteException : " + e);
             }
-        }
-    }
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public static void setStatusBarDisabledDpm(Context context, boolean bDisable) {
-        if (null == context) return;
-
-        try {
-            DevicePolicyManager mDPM = (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
-//            mDPM.setStatusBarDisabled(MyApplication.who, bDisable);
-        } catch (Exception e) {
-            Log.e(TAG, "setStatusBarDisabledDpm.Exception : " + e);
-        }
-    }
-
-    public static void forceStopPackage(Context context, String packageName) {
-        if (null == context) return;
-        if (packageName.equals(context.getPackageName())) return;
-
-        try {
-            ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
-            activityManager.forceStopPackage(packageName);
-        } catch (Throwable e) {
-            Log.e(TAG, "forceStopPackage.Throwable : " + e);
-        }
-    }
-
-    public static boolean isEmpty(String str) {
-        if (str == null || str.equals("")) {
-            return true;
-        }
-        return false;
-    }
-
-    public static boolean isHashFile(String filePath) {
-        return !isEmpty(filePath) && new File(filePath).exists();
-    }
-
-    public static void captureScreen(String fileDir, String fileName) {
-        if (null == fileDir) return;
-        if (null == fileName) return;
-
-        Log.d(TAG, "fileDir : " + fileDir + " fileName : " + fileName);
-
-        try {
-            if (!isHashFile(fileDir)) {
-                return;
-            }
-            Process process = Runtime.getRuntime().exec("screencap -p " + fileDir + File.separator + fileName);
-            Log.d(TAG, "process waitFor");
-            int exitCode = process.waitFor();
-            Log.d(TAG, "exitCode : " + exitCode);
-            process.destroy();
-        } catch (Exception e) {
-            Log.e(TAG, "captureScreen.Exception : " + e);
         }
     }
 }

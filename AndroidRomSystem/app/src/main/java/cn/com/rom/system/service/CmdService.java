@@ -58,30 +58,6 @@ public class CmdService extends Service {
             }
             break;
 
-            case 7: {
-                List<String> strPackageNames = new ArrayList<String>();
-                strPackageNames.add("com.android.settings");
-                romUtil.SetAppSuspendDpm(this, strPackageNames, true);
-            }
-            break;
-
-            case 8: {
-                List<String> strPackageNames = new ArrayList<String>();
-                strPackageNames.add("com.android.settings");
-                romUtil.SetAppSuspendDpm(this, strPackageNames, false);
-            }
-            break;
-
-            case 9: {
-                romUtil.setCameraDisabled(this, true);
-            }
-            break;
-
-            case 10: {
-                romUtil.setCameraDisabled(this, false);
-            }
-            break;
-
             case 11: {
                 romUtil.setStatusBarDisabled28(this, true);
             }
@@ -89,16 +65,6 @@ public class CmdService extends Service {
 
             case 12: {
                 romUtil.setStatusBarDisabled28(this, false);
-            }
-            break;
-
-            case 13: {
-                romUtil.setStatusBarDisabledDpm(this, true);
-            }
-            break;
-
-            case 14: {
-                romUtil.setStatusBarDisabledDpm(this, false);
             }
             break;
         }

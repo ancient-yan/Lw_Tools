@@ -32,11 +32,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <receiver android:name="cn.com.rom.system.receiver.PackageVerifyReceiver"
+        <receiver
+            android:name="cn.com.rom.system.receiver.PackageVerifyReceiver"
             android:excludeFromRecents="true">
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_NEEDS_VERIFICATION" />
-                <data android:mimeType="application/vnd.android.package-archive"/>
+                <data android:mimeType="application/vnd.android.package-archive" />
             </intent-filter>
         </receiver>
         <provider
