@@ -5,10 +5,6 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.util.Log;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import cn.com.rom.system.util.dbUtil;
 import cn.com.rom.system.util.romUtil;
 
 public class CmdService extends Service {
@@ -27,34 +23,8 @@ public class CmdService extends Service {
         Log.d(TAG, "CmdService.onStartCommand.nCmd : " + nCmd);
 
         switch (nCmd) {
-            case 1: {
-                dbUtil.addInstallWhiteApp(this, "lw.deviceguard");
-            }
-            break;
-
-            case 2: {
-                boolean bRet = dbUtil.isInstallWhiteApp(this, "lw.deviceguard");
-                Log.d(TAG, "bRet : " + bRet);
-            }
-            break;
-
-            case 3: {
-                dbUtil.getInstallWhiteApp(this);
-            }
-            break;
-
-            case 4: {
-                dbUtil.clearInstallWhiteApp(this);
-            }
-            break;
-
             case 5: {
                 romUtil.install28(this, "/sdcard/a.apk");
-            }
-            break;
-
-            case 6: {
-                romUtil.deletePackage(this, "com.tools.payhelper", null, false);
             }
             break;
 

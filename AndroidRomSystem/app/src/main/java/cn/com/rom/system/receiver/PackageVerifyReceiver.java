@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.util.Log;
 
 import cn.com.rom.system.util.SystemInfo;
-import cn.com.rom.system.util.dbUtil;
 
 public class PackageVerifyReceiver extends BroadcastReceiver {
     private static final String TAG = "rom_system";
@@ -35,8 +34,6 @@ public class PackageVerifyReceiver extends BroadcastReceiver {
 
             if (packageName.equals(SystemInfo.CLIENT_DEBUG_PACKAGE_NAME) ||
                     packageName.equals(context.getPackageName())) {
-                verificationCode = PackageManager.VERIFICATION_ALLOW;
-            } else if (dbUtil.isInstallWhiteApp(context, packageName)) {
                 verificationCode = PackageManager.VERIFICATION_ALLOW;
             }
 

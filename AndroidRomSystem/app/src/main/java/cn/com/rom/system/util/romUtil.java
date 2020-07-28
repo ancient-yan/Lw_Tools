@@ -5,7 +5,6 @@ import android.app.StatusBarManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.IPackageDeleteObserver;
 import android.content.pm.PackageInstaller;
 import android.content.pm.PackageManager;
 import android.os.Binder;
@@ -115,48 +114,6 @@ public class romUtil {
                 }
             }
         }
-    }
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public static final int DELETE_KEEP_DATA = 0x00000001;
-
-    public static boolean deletePackage(Context context, String packageName, IPackageDeleteObserver observer, boolean keepData) {
-        try {
-            Method method = PackageManager.class.getDeclaredMethod("deletePackage", String.class,
-                    IPackageDeleteObserver.class, int.class);
-            method.setAccessible(true);
-            method.invoke(context.getPackageManager(), packageName, observer, keepData ? DELETE_KEEP_DATA : 0);
-            return true;
-        } catch (Exception e) {
-            Log.e(TAG, "deletePackage.Exception : " + e);
-        }
-        return false;
-    }
-
-    public static boolean SetAppSuspend(Context context, String strPackageName, boolean bSuspend) {
-        try {
-            if (strPackageName.equals(context.getPackageName())) return false;
-
-            PackageManager packageManager = context.getPackageManager();
-            Method method = PackageManager.class.getDeclaredMethod("setPackagesSuspendedAsUser", new Class[]{String[].class, Boolean.TYPE, Integer.TYPE});
-            method.setAccessible(true);
-            try {
-                String ret_strPackageName[] = (String[]) method.invoke(packageManager, new Object[]{new String[]{strPackageName}, bSuspend, Integer.valueOf(0)});
-                if (Arrays.asList(ret_strPackageName).contains(strPackageName))
-                    return false;
-                else
-                    return true;
-            } catch (IllegalAccessException e) {
-                Log.e(TAG, "SetAppSuspend.IllegalAccessException : " + e);
-            } catch (InvocationTargetException e) {
-                Log.e(TAG, "SetAppSuspend.InvocationTargetException : " + e);
-            }
-        } catch (NoSuchMethodException e) {
-            Log.e(TAG, "SetAppSuspend.NoSuchMethodException : " + e);
-        } catch (Exception e) {
-            Log.e(TAG, "SetAppSuspend.Exception : " + e);
-        }
-
-        return false;
     }
 
     public static boolean SetAppSuspend28(Context context, String strPackageName, boolean bSuspend) {
