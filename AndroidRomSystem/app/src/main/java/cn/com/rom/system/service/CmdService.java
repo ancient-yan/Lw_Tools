@@ -27,16 +27,6 @@ public class CmdService extends Service {
                 romUtil.install28(this, "/sdcard/a.apk");
             }
             break;
-
-            case 11: {
-                romUtil.setStatusBarDisabled28(this, true);
-            }
-            break;
-
-            case 12: {
-                romUtil.setStatusBarDisabled28(this, false);
-            }
-            break;
         }
 
         return super.onStartCommand(intent, flags, startId);

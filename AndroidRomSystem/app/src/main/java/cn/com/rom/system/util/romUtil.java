@@ -1,19 +1,13 @@
 package cn.com.rom.system.util;
 
 import android.app.PendingIntent;
-import android.app.StatusBarManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInstaller;
 import android.content.pm.PackageManager;
-import android.os.Binder;
 import android.os.PersistableBundle;
-import android.os.RemoteException;
-import android.os.ServiceManager;
 import android.util.Log;
-
-import com.android.internal.statusbar.IStatusBarService;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -136,34 +130,5 @@ public class romUtil {
         }
 
         return false;
-    }
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    private static final int STATUS_BAR_DISABLE_MASK =
-            StatusBarManager.DISABLE_EXPAND |
-                    StatusBarManager.DISABLE_NOTIFICATION_ICONS |
-                    StatusBarManager.DISABLE_NOTIFICATION_ALERTS |
-                    StatusBarManager.DISABLE_SEARCH;
-
-    private static final int STATUS_BAR_DISABLE2_MASK =
-            StatusBarManager.DISABLE2_QUICK_SETTINGS;
-
-    public static void setStatusBarDisabled28(Context context, boolean disabled) {
-        if (null == context) return;
-        final Binder mToken = new Binder();
-
-        IStatusBarService statusBarService = IStatusBarService.Stub.asInterface(
-                ServiceManager.checkService(Context.STATUS_BAR_SERVICE));
-
-        if (statusBarService != null) {
-            int flags1 = disabled ? STATUS_BAR_DISABLE_MASK : StatusBarManager.DISABLE_NONE;
-            int flags2 = disabled ? STATUS_BAR_DISABLE2_MASK : StatusBarManager.DISABLE2_NONE;
-            try {
-                statusBarService.disableForUser(flags1, mToken, context.getPackageName(), 0);
-                statusBarService.disable2ForUser(flags2, mToken, context.getPackageName(), 0);
-            } catch (RemoteException e) {
-                Log.e(TAG, "setStatusBarDisabled28.RemoteException : " + e);
-            }
-        }
     }
 }
