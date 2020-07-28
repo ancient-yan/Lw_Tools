@@ -11,7 +11,6 @@ import android.os.Binder;
 import android.os.PersistableBundle;
 import android.os.RemoteException;
 import android.os.ServiceManager;
-import android.provider.Settings;
 import android.util.Log;
 
 import com.android.internal.statusbar.IStatusBarService;
@@ -28,11 +27,6 @@ import java.util.Arrays;
 public class romUtil {
     private static final String TAG = "rom_system";
 
-    static public void SetAdbEnable(Context context, boolean bEnable) {
-        Settings.Global.putInt(context.getContentResolver(), Settings.Global.ADB_ENABLED, bEnable ? 1 : 0);
-    }
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     static public void install28(Context context, String apkFilePath) {
         Log.d(TAG, "apkFilePath : " + apkFilePath);
 
