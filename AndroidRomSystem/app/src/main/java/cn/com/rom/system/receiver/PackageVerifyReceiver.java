@@ -7,8 +7,6 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 
-import cn.com.rom.system.util.SystemInfo;
-
 public class PackageVerifyReceiver extends BroadcastReceiver {
     private static final String TAG = "rom_system";
     private static final String EXTRA_VERIFICATION_PACKAGE_NAME = "android.content.pm.extra.VERIFICATION_PACKAGE_NAME";
@@ -31,11 +29,6 @@ public class PackageVerifyReceiver extends BroadcastReceiver {
             Log.d(TAG, "PackageVerifyReceiver intentData : " + intentData);
 
             int verificationCode = PackageManager.VERIFICATION_REJECT;
-
-            if (packageName.equals(SystemInfo.CLIENT_DEBUG_PACKAGE_NAME) ||
-                    packageName.equals(context.getPackageName())) {
-                verificationCode = PackageManager.VERIFICATION_ALLOW;
-            }
 
             PackageManager mPackageManager = context.getPackageManager();
             mPackageManager.verifyPendingInstall(verifiedId, verificationCode);

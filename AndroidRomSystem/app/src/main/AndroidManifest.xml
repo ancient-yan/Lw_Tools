@@ -40,10 +40,6 @@
                 <data android:mimeType="application/vnd.android.package-archive" />
             </intent-filter>
         </receiver>
-        <provider
-            android:name=".dbProvider"
-            android:authorities="cn.com.rom.system.provider"
-            android:exported="false" />
 
         <service
             android:name=".service.CmdService"
