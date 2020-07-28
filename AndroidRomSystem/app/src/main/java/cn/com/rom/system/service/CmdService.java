@@ -5,8 +5,6 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.util.Log;
 
-import cn.com.rom.system.util.romUtil;
-
 public class CmdService extends Service {
     private static final String TAG = "rom_system";
 
@@ -23,10 +21,6 @@ public class CmdService extends Service {
         Log.d(TAG, "CmdService.onStartCommand.nCmd : " + nCmd);
 
         switch (nCmd) {
-            case 5: {
-                romUtil.install28(this, "/sdcard/a.apk");
-            }
-            break;
         }
 
         return super.onStartCommand(intent, flags, startId);
