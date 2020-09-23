@@ -7,6 +7,7 @@ import android.content.ComponentName;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 import android.os.Binder;
 import android.os.IBinder;
 import android.os.UserManager;
@@ -263,6 +264,18 @@ public class romMDMService extends Service {
             switch (strCmd) {
                 case "getSetTime": {
                     cv_ret.put("bFlag", mDPM.getAutoTimeRequired());
+                }
+                return cv_ret;
+
+                case "getSuspendApp": {
+                    String str_packageName = cv.getAsString("packageName");
+
+                    try {
+                        cv_ret.put("bFlag", mDPM.isPackageSuspended(who, str_packageName));
+                    } catch (PackageManager.NameNotFoundException e) {
+                        Log.e(TAG, "getSuspendApp : " + e);
+                        cv_ret.put("bFlag", false);
+                    }
                 }
                 return cv_ret;
 
