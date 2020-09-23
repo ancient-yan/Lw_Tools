@@ -9,21 +9,23 @@ import cn.com.rom.system.receiver.dpmReceiver;
 
 public class MyApplication extends Application {
     private static final String TAG = "rom_system";
+    public static ComponentName who;
+    public static DevicePolicyManager mDPM;
 
     @Override
     public void onCreate() {
         super.onCreate();
 
-        ComponentName who = new ComponentName(getApplicationContext(), dpmReceiver.class);
-        DevicePolicyManager mDPM = (DevicePolicyManager) getSystemService(DEVICE_POLICY_SERVICE);
+        who = new ComponentName(getApplicationContext(), dpmReceiver.class);
+        mDPM = (DevicePolicyManager) getSystemService(DEVICE_POLICY_SERVICE);
 
         if (!mDPM.isAdminActive(who)) {
-            Log.d(TAG, "isAdminActive false!");
+            Log.i(TAG, "isAdminActive false!");
             return;
         }
 
         if (!mDPM.isDeviceOwnerApp(getPackageName())) {
-            Log.d(TAG, "isDeviceOwnerApp false!");
+            Log.i(TAG, "isDeviceOwnerApp false!");
             return;
         }
     }
