@@ -16,7 +16,8 @@ import android.util.Log;
 import java.util.Arrays;
 import java.util.List;
 
-import cn.com.rom.system.receiver.dpmReceiver;
+import static cn.com.rom.system.MyApplication.mDPM;
+import static cn.com.rom.system.MyApplication.who;
 
 public class romMDMService extends Service {
     private static final String TAG = "rom_system";
@@ -40,8 +41,6 @@ public class romMDMService extends Service {
 
         public boolean setFunction(ContentValues cv, List<String> listIn, List<String> listOut) throws RemoteException {
             String strCmd = cv.getAsString("strCmd");
-            ComponentName who = new ComponentName(getApplicationContext(), dpmReceiver.class);
-            DevicePolicyManager mDPM = (DevicePolicyManager) getSystemService(DEVICE_POLICY_SERVICE);
 
             switch (strCmd) {
                 case "setSuspendApp": {
@@ -253,8 +252,6 @@ public class romMDMService extends Service {
 
         public ContentValues getFunction(ContentValues cv, List<String> listIn, List<String> listOut) throws RemoteException {
             String strCmd = cv.getAsString("strCmd");
-            ComponentName who = new ComponentName(getApplicationContext(), dpmReceiver.class);
-            DevicePolicyManager mDPM = (DevicePolicyManager) getSystemService(DEVICE_POLICY_SERVICE);
 
             ContentValues cv_ret = new ContentValues();
 

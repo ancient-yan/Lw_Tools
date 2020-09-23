@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
+import static cn.com.rom.system.MyApplication.mDPM;
+import static cn.com.rom.system.MyApplication.who;
+
 public class MainActivity extends Activity {
     private static final String TAG = "rom_system";
     private static final int requestCodeAminActive = 2211;
@@ -14,11 +17,11 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (!MyApplication.mDPM.isAdminActive(MyApplication.who)) {
+        if (!mDPM.isAdminActive(who)) {
             Log.i(TAG, "isAdminActive false!");
 
             Intent intent = new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
-            intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, MyApplication.who);
+            intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, who);
             intent.putExtra(DevicePolicyManager.EXTRA_ADD_EXPLANATION, "");
             startActivityForResult(intent, requestCodeAminActive);
         } else finish();
