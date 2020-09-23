@@ -9,12 +9,13 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Binder;
 import android.os.IBinder;
-import android.os.RemoteException;
 import android.os.UserManager;
 import android.util.Log;
 
 import java.util.Arrays;
 import java.util.List;
+
+import cn.com.rom.system.MainActivity;
 
 import static cn.com.rom.system.MyApplication.mDPM;
 import static cn.com.rom.system.MyApplication.who;
@@ -39,9 +40,11 @@ public class romMDMService extends Service {
         private MyBinder() {
         }
 
-        public boolean setFunction(ContentValues cv, List<String> listIn, List<String> listOut) throws RemoteException {
-            String strCmd = cv.getAsString("strCmd");
+        public boolean setFunction(ContentValues cv, List<String> listIn, List<String> listOut) {
+            if (!mDPM.isAdminActive(who))
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
 
+            String strCmd = cv.getAsString("strCmd");
             switch (strCmd) {
                 case "setSuspendApp": {
                     boolean bFlag = cv.getAsBoolean("bFlag");
@@ -193,7 +196,7 @@ public class romMDMService extends Service {
                     String str_key = cv.getAsString("key");
                     String str_values = cv.getAsString("values");
 
-                    Log.d(TAG,"setSettings : " + str_namespace + " : " + str_key + " : " + str_values);
+                    Log.d(TAG, "setSettings : " + str_namespace + " : " + str_key + " : " + str_values);
 
                     switch (str_namespace) {
                         case "system":
@@ -250,9 +253,11 @@ public class romMDMService extends Service {
             return false;
         }
 
-        public ContentValues getFunction(ContentValues cv, List<String> listIn, List<String> listOut) throws RemoteException {
-            String strCmd = cv.getAsString("strCmd");
+        public ContentValues getFunction(ContentValues cv, List<String> listIn, List<String> listOut) {
+            if (!mDPM.isAdminActive(who))
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
 
+            String strCmd = cv.getAsString("strCmd");
             ContentValues cv_ret = new ContentValues();
 
             switch (strCmd) {
