@@ -303,6 +303,18 @@ public class romMDMService extends Service {
                 }
                 return cv_ret;
 
+                case "getHideApps": {
+                    for (String packageName : listIn) {
+                        try {
+                            if (mDPM.isApplicationHidden(who, packageName))
+                                listOut.add(packageName);
+                        } catch (Throwable e) {
+                            Log.e(TAG, "getHideApps : " + e);
+                        }
+                    }
+                }
+                return cv_ret;
+
                 case "getUninstallApp": {
                     String str_packageName = cv.getAsString("packageName");
 
@@ -311,6 +323,18 @@ public class romMDMService extends Service {
                     } catch (Throwable e) {
                         Log.e(TAG, "getUninstallApp : " + e);
                         cv_ret.put("bFlag", false);
+                    }
+                }
+                return cv_ret;
+
+                case "getUninstallApps": {
+                    for (String packageName : listIn) {
+                        try {
+                            if (mDPM.isUninstallBlocked(who, packageName))
+                                listOut.add(packageName);
+                        } catch (Throwable e) {
+                            Log.e(TAG, "getUninstallApps : " + e);
+                        }
                     }
                 }
                 return cv_ret;
