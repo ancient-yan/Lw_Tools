@@ -267,6 +267,11 @@ public class romMDMService extends Service {
                 }
                 return cv_ret;
 
+                case "disableCamera": {
+                    cv_ret.put("bFlag", mDPM.getCameraDisabled(who));
+                }
+                return cv_ret;
+
                 case "getSuspendApp": {
                     String str_packageName = cv.getAsString("packageName");
 
