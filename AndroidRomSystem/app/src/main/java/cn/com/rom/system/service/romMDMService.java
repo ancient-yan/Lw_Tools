@@ -280,15 +280,12 @@ public class romMDMService extends Service {
                 return cv_ret;
 
                 case "getSuspendApps": {
-                    for (String key : cv.keySet()) {
-                        if (key.startsWith("packageName")) {
-                            try {
-                                String str_packageName = cv.getAsString(key);
-                                if (mDPM.isPackageSuspended(who, str_packageName))
-                                    cv_ret.put(key, str_packageName);
-                            } catch (PackageManager.NameNotFoundException e) {
-                                Log.e(TAG, "getSuspendApps : " + e);
-                            }
+                    for (String packageName : listIn) {
+                        try {
+                            if (mDPM.isPackageSuspended(who, packageName))
+                                listOut.add(packageName);
+                        } catch (PackageManager.NameNotFoundException e) {
+                            Log.e(TAG, "getSuspendApps : " + e);
                         }
                     }
                 }
