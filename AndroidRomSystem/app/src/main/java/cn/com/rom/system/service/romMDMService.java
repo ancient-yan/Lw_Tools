@@ -291,6 +291,30 @@ public class romMDMService extends Service {
                 }
                 return cv_ret;
 
+                case "getHideApp": {
+                    String str_packageName = cv.getAsString("packageName");
+
+                    try {
+                        cv_ret.put("bFlag", mDPM.isApplicationHidden(who, str_packageName));
+                    } catch (Throwable e) {
+                        Log.e(TAG, "getHideApp : " + e);
+                        cv_ret.put("bFlag", false);
+                    }
+                }
+                return cv_ret;
+
+                case "getUninstallApp": {
+                    String str_packageName = cv.getAsString("packageName");
+
+                    try {
+                        cv_ret.put("bFlag", mDPM.isUninstallBlocked(who, str_packageName));
+                    } catch (Throwable e) {
+                        Log.e(TAG, "getUninstallApp : " + e);
+                        cv_ret.put("bFlag", false);
+                    }
+                }
+                return cv_ret;
+
                 case "getAppPermission": {
                     String str_packageName = cv.getAsString("packageName");
                     String str_permission = cv.getAsString("permission");
