@@ -285,6 +285,18 @@ public class romMDMService extends Service {
                 }
                 return cv_ret;
 
+                case "disableNetworkReset": {
+                    Bundle bundle = mDPM.getUserRestrictions(who);
+
+                    for (String key : bundle.keySet()) {
+                        Log.i(TAG, "key : " + key);
+                        Log.i(TAG, "value : " + bundle.get(key));
+                    }
+
+                    cv_ret.put("bFlag", bundle.getBoolean(UserManager.DISALLOW_NETWORK_RESET, false));
+                }
+                return cv_ret;
+
                 case "getSuspendApp": {
                     String str_packageName = cv.getAsString("packageName");
 
