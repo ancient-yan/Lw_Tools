@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.os.Binder;
+import android.os.Bundle;
 import android.os.IBinder;
 import android.os.UserManager;
 import android.util.Log;
@@ -269,6 +270,18 @@ public class romMDMService extends Service {
 
                 case "disableCamera": {
                     cv_ret.put("bFlag", mDPM.getCameraDisabled(who));
+                }
+                return cv_ret;
+
+                case "disableFactoryReset": {
+                    Bundle bundle = mDPM.getUserRestrictions(who);
+
+                    for (String key : bundle.keySet()) {
+                        Log.i(TAG, "key : " + key);
+                        Log.i(TAG, "value : " + bundle.get(key));
+                    }
+
+                    cv_ret.put("bFlag", bundle.getBoolean(UserManager.DISALLOW_FACTORY_RESET, false));
                 }
                 return cv_ret;
 
