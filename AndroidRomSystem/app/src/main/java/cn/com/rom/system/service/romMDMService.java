@@ -391,7 +391,12 @@ public class romMDMService extends Service {
                 return cv_ret;
 
                 case "getScreenInfo": {
-                    String strLockScreenInfo = mDPM.getDeviceOwnerLockScreenInfo().toString();
+                    String strLockScreenInfo;
+                    CharSequence charSequence = mDPM.getDeviceOwnerLockScreenInfo();
+                    if (null != charSequence)
+                        strLockScreenInfo = charSequence.toString();
+                    else
+                        strLockScreenInfo = "";
                     cv_ret.put("screenInfo", strLockScreenInfo);
                 }
                 return cv_ret;
