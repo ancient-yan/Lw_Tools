@@ -1,7 +1,9 @@
 package com.gwchina.child.mdm.core;
 
 import android.content.Context;
+import android.os.RemoteException;
 
+import com.gwchina.child.mdm.DeviceService;
 import com.gwchina.child.mdm.GwDeviceApplicationManager;
 import com.gwchina.child.mdm.GwDeviceCameraManager;
 import com.gwchina.child.mdm.GwDeviceControlManager;
@@ -43,7 +45,10 @@ public class glDeviceInterfaceImpl extends AbstractDeviceInterfaceImpl {
     }
 
     @Override
-    public boolean init(String key) {
+    public boolean init(String key) throws RemoteException {
+        if (null == DeviceService.getmBinder()) throw new RemoteException("getmBinder null");
+        if (null == DeviceService.getmBinder2()) throw new RemoteException("getmBinder2 null");
+
         mDeviceControlManager = new lwDeviceControlManagerImpl();
         mDeviceRestrictionManager = new lwDeviceRestrictionManagerImpl();
         mDeviceSettingsManager = new lwDeviceSettingsManagerImpl();
