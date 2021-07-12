@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">格雷守护设备管理器</string>
+
+    <style name="WindowStyle" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimAmount">0</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+    </style>
+</resources>
