@@ -2,7 +2,6 @@ package com.gwchina.child.mdm;
 
 import android.app.IMiddlewareService;
 import android.app.Service;
-import android.app.hwMDM;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -20,12 +19,9 @@ import io.reactivex.disposables.Disposable;
 public class DeviceService extends Service implements ServiceConnection {
     private final static String TAG = "my_mdm";
     private final static String action = "com.txtw.lwmiddleware.action.MiddlewareService";
-    private final static String action2 = "com.txtw.lwmiddleware.action.MiddlewareService.hw";
     private final static String Serviceclass = "com.gwchina.lssw.child.hw.MiddlewareService";
-    private final static String Serviceclass2 = "com.gwchina.lssw.child.hw.hwMDMService";
     private GwDeviceInterface.Stub mStub;
     private static IMiddlewareService mBinder;
-    private static hwMDM mBinder2;
     private Disposable mConnectDisposable;
 
     public static void unsubscribeIfNotNull(Disposable disposable) {
@@ -38,23 +34,19 @@ public class DeviceService extends Service implements ServiceConnection {
         return mBinder;
     }
 
-    public static hwMDM getmBinder2() {
-        return mBinder2;
-    }
-
     @Override
     public IBinder onBind(Intent intent) {
-        Log.d(TAG, intent.toString());
+        Log.i(TAG, intent.toString());
         if (mStub == null) {
             newBinder();
         }
-        Log.d(TAG, "onBind");
+        Log.i(TAG, "onBind");
         return mStub;
     }
 
     @Override
     public boolean onUnbind(Intent intent) {
-        Log.d(TAG, "onUnbind=" + intent.toString());
+        Log.i(TAG, "onUnbind=" + intent.toString());
         mStub = null;
         return super.onUnbind(intent);
     }
@@ -75,26 +67,12 @@ public class DeviceService extends Service implements ServiceConnection {
         Log.i(TAG, strPackageName + " : " + bRet);
     }
 
-    private void startService2() {
-        Intent intent = new Intent(action2);
-
-        String strPackageName = "com.gwchina.lssw.child.hw";
-        intent.setPackage(strPackageName);
-        boolean bRet = bindService(intent, this, Context.BIND_AUTO_CREATE);
-        Log.i(TAG, strPackageName + " :.hw " + bRet);
-    }
-
     void connect() {
         unsubscribeIfNotNull(mConnectDisposable);
         mConnectDisposable = Flowable.interval(0, 3, TimeUnit.SECONDS).subscribe(aLong -> {
             if (mBinder == null) {
                 Log.i(TAG, "绑定Lw MDM服务");
                 startService();
-            }
-
-            if (mBinder2 == null) {
-                Log.i(TAG, "绑定Lw2 MDM服务");
-                startService2();
             }
         }, throwable -> Log.e(TAG, "连接Lw MDM异常 : " + throwable));
     }
@@ -120,11 +98,9 @@ public class DeviceService extends Service implements ServiceConnection {
 
         if (Serviceclass.equals(name.getClassName())) {
             mBinder = IMiddlewareService.Stub.asInterface(service);
-        } else if (Serviceclass2.equals(name.getClassName())) {
-            mBinder2 = hwMDM.Stub.asInterface(service);
         }
 
-        if (mBinder != null && mBinder2 != null)
+        if (mBinder != null)
             unsubscribeIfNotNull(mConnectDisposable);
     }
 
@@ -134,12 +110,6 @@ public class DeviceService extends Service implements ServiceConnection {
 
         if (Serviceclass.equals(name.getClassName())) {
             mBinder = null;
-            connect();
-            return;
-        }
-
-        if (Serviceclass2.equals(name.getClassName())) {
-            mBinder2 = null;
             connect();
             return;
         }

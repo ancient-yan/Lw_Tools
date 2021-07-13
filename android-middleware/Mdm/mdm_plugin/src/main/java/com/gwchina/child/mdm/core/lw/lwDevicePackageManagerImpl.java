@@ -15,7 +15,6 @@ public class lwDevicePackageManagerImpl extends glDevicePackageManagerImpl {
         Log.i(TAG, "addDisallowedUninstallPackages : " + packageNames);
 
         try {
-            DeviceService.getmBinder2().addDisallowedUninstallPackages(packageNames);
         } catch (Throwable e) {
             Log.e(TAG, "addDisallowedUninstallPackages : " + e);
         }
@@ -26,7 +25,6 @@ public class lwDevicePackageManagerImpl extends glDevicePackageManagerImpl {
         Log.i(TAG, "removeDisallowedUninstallPackages : " + packageNames);
 
         try {
-            DeviceService.getmBinder2().removeDisallowedUninstallPackages(packageNames);
         } catch (Throwable e) {
             Log.e(TAG, "removeDisallowedUninstallPackages : " + e);
         }
@@ -37,7 +35,6 @@ public class lwDevicePackageManagerImpl extends glDevicePackageManagerImpl {
         Log.i(TAG, "getDisallowedUninstallPackageList");
 
         try {
-            return DeviceService.getmBinder2().getDisallowedUninstallPackageList();
         } catch (Throwable e) {
             Log.e(TAG, "getDisallowedUninstallPackageList : " + e);
         }
@@ -50,7 +47,6 @@ public class lwDevicePackageManagerImpl extends glDevicePackageManagerImpl {
         Log.i(TAG, "installPackage : " + packagePath);
 
         try {
-            DeviceService.getmBinder2().installPackage(packagePath);
         } catch (Throwable e) {
             Log.e(TAG, "installPackage : " + e);
         }
@@ -61,7 +57,6 @@ public class lwDevicePackageManagerImpl extends glDevicePackageManagerImpl {
         Log.i(TAG, "uninstallPackage : " + packageName);
 
         try {
-            DeviceService.getmBinder2().uninstallPackage(packageName, false);
         } catch (Throwable e) {
             Log.e(TAG, "uninstallPackage : " + e);
         }
@@ -72,7 +67,6 @@ public class lwDevicePackageManagerImpl extends glDevicePackageManagerImpl {
         Log.i(TAG, "clearPackageData : " + packageName);
 
         try {
-            DeviceService.getmBinder2().clearPackageData(packageName);
         } catch (Throwable e) {
             Log.e(TAG, "clearPackageData : " + e);
         }

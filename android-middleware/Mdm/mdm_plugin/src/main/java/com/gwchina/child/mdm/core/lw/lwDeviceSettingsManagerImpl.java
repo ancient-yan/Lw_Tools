@@ -11,7 +11,6 @@ public class lwDeviceSettingsManagerImpl extends glDeviceSettingsManagerImpl {
         Log.i(TAG, "setRestoreFactoryDisabled : " + disable);
 
         try {
-            return DeviceService.getmBinder2().setRestoreFactoryDisabled(disable);
         } catch (Throwable e) {
             Log.e(TAG, "setRestoreFactoryDisabled : " + e);
         }
@@ -24,7 +23,6 @@ public class lwDeviceSettingsManagerImpl extends glDeviceSettingsManagerImpl {
         Log.i(TAG, "isRestoreFactoryDisabled");
 
         try {
-            return DeviceService.getmBinder2().isRestoreFactoryDisabled();
         } catch (Throwable e) {
             Log.e(TAG, "isRestoreFactoryDisabled : " + e);
         }
@@ -37,7 +35,6 @@ public class lwDeviceSettingsManagerImpl extends glDeviceSettingsManagerImpl {
         Log.i(TAG, "setDevelopmentOptionDisabled : " + disable);
 
         try {
-            return DeviceService.getmBinder2().setDevelopmentOptionDisabled(disable);
         } catch (Throwable e) {
             Log.e(TAG, "setDevelopmentOptionDisabled : " + e);
         }
@@ -50,7 +47,6 @@ public class lwDeviceSettingsManagerImpl extends glDeviceSettingsManagerImpl {
         Log.i(TAG, "isDevelopmentOptionDisabled");
 
         try {
-            return DeviceService.getmBinder2().isDevelopmentOptionDisabled();
         } catch (Throwable e) {
             Log.e(TAG, "isDevelopmentOptionDisabled : " + e);
         }
@@ -63,7 +59,6 @@ public class lwDeviceSettingsManagerImpl extends glDeviceSettingsManagerImpl {
         Log.i(TAG, "setTimeAndDateSetDisabled : " + disable);
 
         try {
-            return DeviceService.getmBinder2().setTimeAndDateSetDisabled(disable);
         } catch (Throwable e) {
             Log.e(TAG, "setTimeAndDateSetDisabled : " + e);
         }
@@ -76,7 +71,6 @@ public class lwDeviceSettingsManagerImpl extends glDeviceSettingsManagerImpl {
         Log.i(TAG, "isTimeAndDateSetDisabled");
 
         try {
-            return DeviceService.getmBinder2().isTimeAndDateSetDisabled();
         } catch (Throwable e) {
             Log.e(TAG, "isTimeAndDateSetDisabled : " + e);
         }

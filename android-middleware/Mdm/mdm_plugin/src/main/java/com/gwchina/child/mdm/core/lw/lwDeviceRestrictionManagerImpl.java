@@ -11,7 +11,6 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "setAdbDisabled : " + disabled);
 
         try {
-            DeviceService.getmBinder2().setAdbDisabled(disabled);
             if (disabled) {
                 DeviceService.getmBinder().setFunctionState(ClientDataParse.testPutValues(9, 0));
             } else {
@@ -27,7 +26,6 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "isAdbDisabled");
 
         try {
-            return DeviceService.getmBinder2().isAdbDisabled();
         } catch (Throwable e) {
             Log.e(TAG, "isAdbDisabled : " + e);
         }
@@ -40,7 +38,6 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "setStatusBarExpandPanelDisabled : " + disabled);
 
         try {
-            DeviceService.getmBinder2().setStatusBarExpandPanelDisabled(disabled);
         } catch (Throwable e) {
             Log.e(TAG, "setStatusBarExpandPanelDisabled : " + e);
         }
@@ -51,7 +48,6 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "isStatusBarExpandPanelDisabled");
 
         try {
-            return DeviceService.getmBinder2().isStatusBarExpandPanelDisabled();
         } catch (Throwable e) {
             Log.e(TAG, "isStatusBarExpandPanelDisabled : " + e);
         }
@@ -64,7 +60,6 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "setHomeButtonDisabled : " + disabled);
 
         try {
-            DeviceService.getmBinder2().setHomeButtonDisabled(disabled);
         } catch (Throwable e) {
             Log.e(TAG, "setHomeButtonDisabled : " + e);
         }
@@ -75,7 +70,6 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "isHomeButtonDisabled");
 
         try {
-            return DeviceService.getmBinder2().isHomeButtonDisabled();
         } catch (Throwable e) {
             Log.e(TAG, "isHomeButtonDisabled : " + e);
         }
@@ -88,7 +82,6 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "setTaskButtonDisabled : " + disabled);
 
         try {
-            DeviceService.getmBinder2().setTaskButtonDisabled(disabled);
         } catch (Throwable e) {
             Log.e(TAG, "setTaskButtonDisabled : " + e);
         }
@@ -99,7 +92,6 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "isTaskButtonDisabled");
 
         try {
-            return DeviceService.getmBinder2().isTaskButtonDisabled();
         } catch (Throwable e) {
             Log.e(TAG, "isTaskButtonDisabled : " + e);
         }
@@ -112,7 +104,6 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "setBackButtonDisabled : " + disabled);
 
         try {
-            DeviceService.getmBinder2().setBackButtonDisabled(disabled);
         } catch (Throwable e) {
             Log.e(TAG, "setBackButtonDisabled : " + e);
         }
@@ -123,7 +114,6 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "isBackButtonDisabled");
 
         try {
-            return DeviceService.getmBinder2().isBackButtonDisabled();
         } catch (Throwable e) {
             Log.e(TAG, "isBackButtonDisabled : " + e);
         }
@@ -136,7 +126,6 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "setSafeModeDisabled : " + disabled);
 
         try {
-            DeviceService.getmBinder2().setSafeModeDisabled(disabled);
         } catch (Throwable e) {
             Log.e(TAG, "setSafeModeDisabled : " + e);
         }
@@ -147,7 +136,6 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "isSafeModeDisabled");
 
         try {
-            return DeviceService.getmBinder2().isSafeModeDisabled();
         } catch (Throwable e) {
             Log.e(TAG, "isSafeModeDisabled : " + e);
         }
@@ -160,7 +148,6 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "setUSBDataDisabled : " + disabled);
 
         try {
-            DeviceService.getmBinder2().setUSBDataDisabled(disabled);
         } catch (Throwable e) {
             Log.e(TAG, "setUSBDataDisabled : " + e);
         }
@@ -171,7 +158,6 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "isUSBDataDisabled");
 
         try {
-            return DeviceService.getmBinder2().isUSBDataDisabled();
         } catch (Throwable e) {
             Log.e(TAG, "isUSBDataDisabled : " + e);
         }
@@ -184,7 +170,6 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "setUSBOtgDisabled : " + disabled);
 
         try {
-            DeviceService.getmBinder2().setUSBOtgDisabled(disabled);
         } catch (Throwable e) {
             Log.e(TAG, "setUSBOtgDisabled : " + e);
         }
@@ -195,7 +180,6 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "isUSBOtgDisabled");
 
         try {
-            return DeviceService.getmBinder2().isUSBOtgDisabled();
         } catch (Throwable e) {
             Log.e(TAG, "isUSBOtgDisabled : " + e);
         }

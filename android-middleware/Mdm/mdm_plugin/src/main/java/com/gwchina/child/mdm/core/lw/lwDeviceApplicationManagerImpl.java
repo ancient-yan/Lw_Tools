@@ -13,8 +13,6 @@ public class lwDeviceApplicationManagerImpl extends glDeviceApplicationManagerIm
         Log.i(TAG, "addPersistentApp");
 
         try {
-            DeviceService.getmBinder2().addPersistentApp(packageNames);
-            DeviceService.getmBinder2().setSuperWhiteListForHwSystemManger(packageNames);
         } catch (Throwable e) {
             Log.e(TAG, "addPersistentApp : " + e);
         }
@@ -25,8 +23,6 @@ public class lwDeviceApplicationManagerImpl extends glDeviceApplicationManagerIm
         Log.i(TAG, "removePersistentApp");
 
         try {
-            DeviceService.getmBinder2().removePersistentApp(packageNames);
-            DeviceService.getmBinder2().removeSuperWhiteListForHwSystemManger(packageNames);
         } catch (Throwable e) {
             Log.e(TAG, "removePersistentApp : " + e);
         }
@@ -37,10 +33,6 @@ public class lwDeviceApplicationManagerImpl extends glDeviceApplicationManagerIm
         Log.i(TAG, "getPersistentApp");
 
         try {
-            List<String> stringList = DeviceService.getmBinder2().getSuperWhiteListForHwSystemManger();
-            Log.i(TAG, "stringList : " + stringList);
-
-            return DeviceService.getmBinder2().getPersistentApp();
         } catch (Throwable e) {
             Log.e(TAG, "getPersistentApp : " + e);
         }
@@ -64,7 +56,6 @@ public class lwDeviceApplicationManagerImpl extends glDeviceApplicationManagerIm
         Log.i(TAG, "addDisallowedRunningApp : " + packageNames);
 
         try {
-            DeviceService.getmBinder2().addDisallowedRunningApp(packageNames);
         } catch (Throwable e) {
             Log.e(TAG, "addDisallowedRunningApp : " + e);
         }
@@ -75,7 +66,6 @@ public class lwDeviceApplicationManagerImpl extends glDeviceApplicationManagerIm
         Log.i(TAG, "removeDisallowedRunningApp : " + packageNames);
 
         try {
-            DeviceService.getmBinder2().removeDisallowedRunningApp(packageNames);
         } catch (Throwable e) {
             Log.e(TAG, "removeDisallowedRunningApp : " + e);
         }
@@ -86,7 +76,6 @@ public class lwDeviceApplicationManagerImpl extends glDeviceApplicationManagerIm
         Log.i(TAG, "getDisallowedRunningApp");
 
         try {
-            return DeviceService.getmBinder2().getDisallowedRunningApp();
         } catch (Throwable e) {
             Log.e(TAG, "getDisallowedRunningApp : " + e);
         }

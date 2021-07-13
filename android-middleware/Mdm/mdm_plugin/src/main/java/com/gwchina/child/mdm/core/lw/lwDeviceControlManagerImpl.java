@@ -25,7 +25,6 @@ public class lwDeviceControlManagerImpl extends glDeviceControlManagerImpl {
         Log.i(TAG, "rebootDevice");
 
         try {
-            DeviceService.getmBinder2().rebootDevice();
         } catch (Throwable e) {
             Log.e(TAG, "rebootDevice : " + e);
         }
@@ -36,7 +35,6 @@ public class lwDeviceControlManagerImpl extends glDeviceControlManagerImpl {
         Log.i(TAG, "setDefaultLauncher : " + packageName + "/" + className);
 
         try {
-            DeviceService.getmBinder2().setDefaultLauncher(packageName, className);
         } catch (Throwable e) {
             Log.e(TAG, "setDefaultLauncher : " + e);
         }
@@ -47,7 +45,6 @@ public class lwDeviceControlManagerImpl extends glDeviceControlManagerImpl {
         Log.i(TAG, "clearDefaultLauncher");
 
         try {
-            DeviceService.getmBinder2().clearDefaultLauncher();
         } catch (Throwable e) {
             Log.e(TAG, "clearDefaultLauncher : " + e);
         }
@@ -58,7 +55,6 @@ public class lwDeviceControlManagerImpl extends glDeviceControlManagerImpl {
         Log.i(TAG, "setCustomSettingsMenu : " + menusToDelete);
 
         try {
-            DeviceService.getmBinder2().setCustomSettingsMenu(menusToDelete);
         } catch (Throwable e) {
             Log.e(TAG, "setCustomSettingsMenu : " + e);
         }
@@ -69,7 +65,6 @@ public class lwDeviceControlManagerImpl extends glDeviceControlManagerImpl {
         Log.i(TAG, "captureScreen");
 
         try {
-            return DeviceService.getmBinder2().captureScreen();
         } catch (Throwable e) {
             Log.e(TAG, "captureScreen : " + e);
         }
@@ -82,7 +77,6 @@ public class lwDeviceControlManagerImpl extends glDeviceControlManagerImpl {
         Log.i(TAG, "turnOnGPS : " + on);
 
         try {
-            DeviceService.getmBinder2().turnOnGPS(on);
         } catch (Throwable e) {
             Log.e(TAG, "turnOnGPS : " + e);
         }
@@ -93,7 +87,6 @@ public class lwDeviceControlManagerImpl extends glDeviceControlManagerImpl {
         Log.i(TAG, "isGPSTurnOn");
 
         try {
-            return DeviceService.getmBinder2().isGPSTurnOn();
         } catch (Throwable e) {
             Log.e(TAG, "isGPSTurnOn : " + e);
         }
