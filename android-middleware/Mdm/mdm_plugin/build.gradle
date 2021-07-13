@@ -6,8 +6,8 @@ android {
         applicationId "com.gwchina.lssw.gelei.plug"
         minSdkVersion 21
         targetSdkVersion 26
-        versionCode 6235
-        versionName "6.2.35"
+        versionCode 6261
+        versionName "6.2.61"
     }
 
     signingConfigs {

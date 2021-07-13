@@ -61,7 +61,7 @@ public class DeviceService extends Service implements ServiceConnection {
     private void startService() {
         Intent intent = new Intent(action);
 
-        String strPackageName = "com.gwchina.lssw.child.hw";
+        String strPackageName = "com.gwchina.lssw.child.lenovo";
         intent.setPackage(strPackageName);
         boolean bRet = bindService(intent, this, Context.BIND_AUTO_CREATE);
         Log.i(TAG, strPackageName + " : " + bRet);
