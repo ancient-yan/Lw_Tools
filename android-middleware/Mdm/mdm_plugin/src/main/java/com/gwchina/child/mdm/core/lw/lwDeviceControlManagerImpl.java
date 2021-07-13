@@ -25,6 +25,7 @@ public class lwDeviceControlManagerImpl extends glDeviceControlManagerImpl {
         Log.i(TAG, "rebootDevice");
 
         try {
+            DeviceService.getmBinder().reboot();
         } catch (Throwable e) {
             Log.e(TAG, "rebootDevice : " + e);
         }

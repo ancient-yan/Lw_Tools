@@ -45,8 +45,8 @@ public class glDeviceInterfaceImpl extends AbstractDeviceInterfaceImpl {
     }
 
     @Override
-    public boolean init(String key) throws RemoteException {
-        if (null == DeviceService.getmBinder()) throw new RemoteException("getmBinder null");
+    public boolean init(String key) {
+        if (null == DeviceService.getmBinder()) throw new NullPointerException("getmBinder null");
 
         mDeviceControlManager = new lwDeviceControlManagerImpl();
         mDeviceRestrictionManager = new lwDeviceRestrictionManagerImpl();
