@@ -26,6 +26,9 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "isAdbDisabled");
 
         try {
+            int nRet = DeviceService.getmBinder().getFunctionState(ClientDataParse.testGetFunction(9));
+            Log.i(TAG, "isAdbDisabled : " + nRet);
+            return (0 == nRet);
         } catch (Throwable e) {
             Log.e(TAG, "isAdbDisabled : " + e);
         }
@@ -148,6 +151,11 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "setUSBDataDisabled : " + disabled);
 
         try {
+            if (disabled) {
+                DeviceService.getmBinder().setFunctionState(ClientDataParse.testPutValues(10, 0));
+            } else {
+                DeviceService.getmBinder().setFunctionState(ClientDataParse.testPutValues(10, 1));
+            }
         } catch (Throwable e) {
             Log.e(TAG, "setUSBDataDisabled : " + e);
         }
@@ -158,6 +166,9 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "isUSBDataDisabled");
 
         try {
+            int nRet = DeviceService.getmBinder().getFunctionState(ClientDataParse.testGetFunction(10));
+            Log.i(TAG, "isUSBDataDisabled : " + nRet);
+            return (0 == nRet);
         } catch (Throwable e) {
             Log.e(TAG, "isUSBDataDisabled : " + e);
         }
