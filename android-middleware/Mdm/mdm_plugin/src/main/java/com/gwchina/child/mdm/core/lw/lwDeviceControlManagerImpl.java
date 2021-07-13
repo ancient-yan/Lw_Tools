@@ -1,5 +1,6 @@
 package com.gwchina.child.mdm.core.lw;
 
+import android.app.mia.MiaMdmPolicyManager;
 import android.graphics.Bitmap;
 import android.util.Log;
 
@@ -9,6 +10,12 @@ import com.gwchina.child.mdm.core.glDeviceControlManagerImpl;
 import java.util.List;
 
 public class lwDeviceControlManagerImpl extends glDeviceControlManagerImpl {
+    MiaMdmPolicyManager mpm;
+
+    public lwDeviceControlManagerImpl(MiaMdmPolicyManager mpm) {
+        this.mpm = mpm;
+    }
+
     @Override
     public void shutdownDevice() {
         Log.i(TAG, "shutdownDevice");
@@ -25,7 +32,7 @@ public class lwDeviceControlManagerImpl extends glDeviceControlManagerImpl {
         Log.i(TAG, "rebootDevice");
 
         try {
-            DeviceService.getmBinder().reboot();
+            mpm.reBoot();
         } catch (Throwable e) {
             Log.e(TAG, "rebootDevice : " + e);
         }

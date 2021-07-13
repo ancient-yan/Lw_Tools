@@ -1,7 +1,8 @@
 package com.gwchina.child.mdm.core;
 
+import android.app.mia.MiaMdmPolicyManager;
 import android.content.Context;
-import android.os.RemoteException;
+import android.util.Log;
 
 import com.gwchina.child.mdm.DeviceService;
 import com.gwchina.child.mdm.GwDeviceApplicationManager;
@@ -48,7 +49,15 @@ public class glDeviceInterfaceImpl extends AbstractDeviceInterfaceImpl {
     public boolean init(String key) {
         if (null == DeviceService.getmBinder()) throw new NullPointerException("getmBinder null");
 
-        mDeviceControlManager = new lwDeviceControlManagerImpl();
+        MiaMdmPolicyManager mpm;
+        try {
+            mpm = new MiaMdmPolicyManager(context.getApplicationContext());
+        } catch (Throwable e) {
+            Log.e(TAG, "glDeviceInterfaceImpl.init.Throwable : " + e);
+            throw new NullPointerException("MiaMdmPolicyManager null");
+        }
+
+        mDeviceControlManager = new lwDeviceControlManagerImpl(mpm);
         mDeviceRestrictionManager = new lwDeviceRestrictionManagerImpl();
         mDeviceSettingsManager = new lwDeviceSettingsManagerImpl();
         mDeviceApplicationManager = new lwDeviceApplicationManagerImpl();
