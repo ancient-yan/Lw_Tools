@@ -4,7 +4,6 @@ import android.app.mia.MiaMdmPolicyManager;
 import android.graphics.Bitmap;
 import android.util.Log;
 
-import com.gwchina.child.mdm.DeviceService;
 import com.gwchina.child.mdm.core.glDeviceControlManagerImpl;
 
 import java.util.List;
@@ -21,7 +20,7 @@ public class lwDeviceControlManagerImpl extends glDeviceControlManagerImpl {
         Log.i(TAG, "shutdownDevice");
 
         try {
-            DeviceService.getmBinder().powerOff();
+            mpm.shutDown();
         } catch (Throwable e) {
             Log.e(TAG, "shutdownDevice : " + e);
         }

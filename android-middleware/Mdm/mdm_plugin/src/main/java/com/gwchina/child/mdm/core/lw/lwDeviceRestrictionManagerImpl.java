@@ -1,11 +1,18 @@
 package com.gwchina.child.mdm.core.lw;
 
+import android.app.mia.MiaMdmPolicyManager;
 import android.util.Log;
 
 import com.gwchina.child.mdm.DeviceService;
 import com.gwchina.child.mdm.core.glDeviceRestrictionManagerImpl;
 
 public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerImpl {
+    MiaMdmPolicyManager mpm;
+
+    public lwDeviceRestrictionManagerImpl(MiaMdmPolicyManager mpm) {
+        this.mpm = mpm;
+    }
+
     @Override
     public void setAdbDisabled(boolean disabled) {
         Log.i(TAG, "setAdbDisabled : " + disabled);
@@ -56,9 +63,7 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "isStatusBarExpandPanelDisabled");
 
         try {
-            int nRet = DeviceService.getmBinder().getFunctionState(ClientDataParse.testGetFunction(15));
-            Log.i(TAG, "isStatusBarExpandPanelDisabled : " + nRet);
-            return (1 == nRet);
+            return !mpm.isControlStatus();
         } catch (Throwable e) {
             Log.e(TAG, "isStatusBarExpandPanelDisabled : " + e);
         }
