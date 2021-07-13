@@ -41,6 +41,11 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "setStatusBarExpandPanelDisabled : " + disabled);
 
         try {
+            if (disabled) {
+                DeviceService.getmBinder().setFunctionState(ClientDataParse.testPutValues(15, 0));
+            } else {
+                DeviceService.getmBinder().setFunctionState(ClientDataParse.testPutValues(15, 1));
+            }
         } catch (Throwable e) {
             Log.e(TAG, "setStatusBarExpandPanelDisabled : " + e);
         }
@@ -51,6 +56,9 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "isStatusBarExpandPanelDisabled");
 
         try {
+            int nRet = DeviceService.getmBinder().getFunctionState(ClientDataParse.testGetFunction(15));
+            Log.i(TAG, "isStatusBarExpandPanelDisabled : " + nRet);
+            return (1 == nRet);
         } catch (Throwable e) {
             Log.e(TAG, "isStatusBarExpandPanelDisabled : " + e);
         }
