@@ -42,6 +42,7 @@ public class lwDeviceControlManagerImpl extends glDeviceControlManagerImpl {
         Log.i(TAG, "setDefaultLauncher : " + packageName + "/" + className);
 
         try {
+            mpm.setCustomLauncher(packageName);
         } catch (Throwable e) {
             Log.e(TAG, "setDefaultLauncher : " + e);
         }
@@ -52,18 +53,9 @@ public class lwDeviceControlManagerImpl extends glDeviceControlManagerImpl {
         Log.i(TAG, "clearDefaultLauncher");
 
         try {
+            mpm.clearCustomLauncher();
         } catch (Throwable e) {
             Log.e(TAG, "clearDefaultLauncher : " + e);
-        }
-    }
-
-    @Override
-    public void setCustomSettingsMenu(List<String> menusToDelete) {
-        Log.i(TAG, "setCustomSettingsMenu : " + menusToDelete);
-
-        try {
-        } catch (Throwable e) {
-            Log.e(TAG, "setCustomSettingsMenu : " + e);
         }
     }
 

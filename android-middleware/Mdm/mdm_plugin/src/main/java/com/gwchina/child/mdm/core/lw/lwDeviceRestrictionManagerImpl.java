@@ -48,11 +48,7 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "setStatusBarExpandPanelDisabled : " + disabled);
 
         try {
-            if (disabled) {
-                DeviceService.getmBinder().setFunctionState(ClientDataParse.testPutValues(15, 0));
-            } else {
-                DeviceService.getmBinder().setFunctionState(ClientDataParse.testPutValues(15, 1));
-            }
+            mpm.setStatusBar(disabled);
         } catch (Throwable e) {
             Log.e(TAG, "setStatusBarExpandPanelDisabled : " + e);
         }
