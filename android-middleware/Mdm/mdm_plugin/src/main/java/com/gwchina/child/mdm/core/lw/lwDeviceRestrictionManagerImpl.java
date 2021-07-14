@@ -72,6 +72,7 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "setHomeButtonDisabled : " + disabled);
 
         try {
+            mpm.setHomeKey(disabled);
         } catch (Throwable e) {
             Log.e(TAG, "setHomeButtonDisabled : " + e);
         }
@@ -82,6 +83,7 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "isHomeButtonDisabled");
 
         try {
+            return !mpm.isControlHomeKey();
         } catch (Throwable e) {
             Log.e(TAG, "isHomeButtonDisabled : " + e);
         }
@@ -94,6 +96,7 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "setTaskButtonDisabled : " + disabled);
 
         try {
+            mpm.setRecentKey(disabled);
         } catch (Throwable e) {
             Log.e(TAG, "setTaskButtonDisabled : " + e);
         }
@@ -104,6 +107,7 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "isTaskButtonDisabled");
 
         try {
+            return !mpm.isControlRecentsKey();
         } catch (Throwable e) {
             Log.e(TAG, "isTaskButtonDisabled : " + e);
         }
