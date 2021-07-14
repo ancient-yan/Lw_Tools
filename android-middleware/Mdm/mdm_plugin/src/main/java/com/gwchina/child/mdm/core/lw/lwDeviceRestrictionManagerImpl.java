@@ -120,6 +120,7 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "setBackButtonDisabled : " + disabled);
 
         try {
+            mpm.setBackKey(disabled);
         } catch (Throwable e) {
             Log.e(TAG, "setBackButtonDisabled : " + e);
         }
@@ -130,6 +131,7 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "isBackButtonDisabled");
 
         try {
+            return !mpm.isControlBackKey();
         } catch (Throwable e) {
             Log.e(TAG, "isBackButtonDisabled : " + e);
         }
@@ -164,11 +166,7 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "setUSBDataDisabled : " + disabled);
 
         try {
-            if (disabled) {
-                DeviceService.getmBinder().setFunctionState(ClientDataParse.testPutValues(10, 0));
-            } else {
-                DeviceService.getmBinder().setFunctionState(ClientDataParse.testPutValues(10, 1));
-            }
+            mpm.setOnlyCharging(disabled);
         } catch (Throwable e) {
             Log.e(TAG, "setUSBDataDisabled : " + e);
         }
@@ -179,9 +177,7 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "isUSBDataDisabled");
 
         try {
-            int nRet = DeviceService.getmBinder().getFunctionState(ClientDataParse.testGetFunction(10));
-            Log.i(TAG, "isUSBDataDisabled : " + nRet);
-            return (0 == nRet);
+            return mpm.isUsbOnlyCharging();
         } catch (Throwable e) {
             Log.e(TAG, "isUSBDataDisabled : " + e);
         }
