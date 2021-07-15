@@ -3,7 +3,6 @@ package com.gwchina.child.mdm.core.lw;
 import android.app.mia.MiaMdmPolicyManager;
 import android.util.Log;
 
-import com.gwchina.child.mdm.DeviceService;
 import com.gwchina.child.mdm.GwPackageDeleteObserver;
 import com.gwchina.child.mdm.GwPackageInstallObserver;
 import com.gwchina.child.mdm.core.glDevicePackageManagerImpl;
