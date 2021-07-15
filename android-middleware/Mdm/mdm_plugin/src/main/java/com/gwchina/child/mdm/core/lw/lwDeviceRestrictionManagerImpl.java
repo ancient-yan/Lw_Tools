@@ -163,26 +163,4 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
 
         return super.isUSBDataDisabled();
     }
-
-    @Override
-    public void setUSBOtgDisabled(boolean disabled) {
-        Log.i(TAG, "setUSBOtgDisabled : " + disabled);
-
-        try {
-        } catch (Throwable e) {
-            Log.e(TAG, "setUSBOtgDisabled : " + e);
-        }
-    }
-
-    @Override
-    public boolean isUSBOtgDisabled() {
-        Log.i(TAG, "isUSBOtgDisabled");
-
-        try {
-        } catch (Throwable e) {
-            Log.e(TAG, "isUSBOtgDisabled : " + e);
-        }
-
-        return super.isUSBOtgDisabled();
-    }
 }

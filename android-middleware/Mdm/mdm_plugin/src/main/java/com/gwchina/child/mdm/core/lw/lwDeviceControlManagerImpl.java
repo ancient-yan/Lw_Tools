@@ -1,12 +1,9 @@
 package com.gwchina.child.mdm.core.lw;
 
 import android.app.mia.MiaMdmPolicyManager;
-import android.graphics.Bitmap;
 import android.util.Log;
 
 import com.gwchina.child.mdm.core.glDeviceControlManagerImpl;
-
-import java.util.List;
 
 public class lwDeviceControlManagerImpl extends glDeviceControlManagerImpl {
     MiaMdmPolicyManager mpm;
@@ -57,39 +54,5 @@ public class lwDeviceControlManagerImpl extends glDeviceControlManagerImpl {
         } catch (Throwable e) {
             Log.e(TAG, "clearDefaultLauncher : " + e);
         }
-    }
-
-    @Override
-    public Bitmap captureScreen() {
-        Log.i(TAG, "captureScreen");
-
-        try {
-        } catch (Throwable e) {
-            Log.e(TAG, "captureScreen : " + e);
-        }
-
-        return super.captureScreen();
-    }
-
-    @Override
-    public void turnOnGPS(boolean on) {
-        Log.i(TAG, "turnOnGPS : " + on);
-
-        try {
-        } catch (Throwable e) {
-            Log.e(TAG, "turnOnGPS : " + e);
-        }
-    }
-
-    @Override
-    public boolean isGPSTurnOn() {
-        Log.i(TAG, "isGPSTurnOn");
-
-        try {
-        } catch (Throwable e) {
-            Log.e(TAG, "isGPSTurnOn : " + e);
-        }
-
-        return super.isGPSTurnOn();
     }
 }
