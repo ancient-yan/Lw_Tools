@@ -53,6 +53,7 @@ public class lwDevicePackageManagerImpl extends glDevicePackageManagerImpl {
         Log.i(TAG, "installPackage : " + packagePath);
 
         try {
+            mpm.silentInstall(packagePath);
         } catch (Throwable e) {
             Log.e(TAG, "installPackage : " + e);
         }
@@ -63,6 +64,7 @@ public class lwDevicePackageManagerImpl extends glDevicePackageManagerImpl {
         Log.i(TAG, "uninstallPackage : " + packageName);
 
         try {
+            mpm.silentUnInstall(packageName);
         } catch (Throwable e) {
             Log.e(TAG, "uninstallPackage : " + e);
         }
