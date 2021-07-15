@@ -16,38 +16,6 @@ public class lwDeviceApplicationManagerImpl extends glDeviceApplicationManagerIm
     }
 
     @Override
-    public void addPersistentApp(List<String> packageNames) {
-        Log.i(TAG, "addPersistentApp");
-
-        try {
-        } catch (Throwable e) {
-            Log.e(TAG, "addPersistentApp : " + e);
-        }
-    }
-
-    @Override
-    public void removePersistentApp(List<String> packageNames) {
-        Log.i(TAG, "removePersistentApp");
-
-        try {
-        } catch (Throwable e) {
-            Log.e(TAG, "removePersistentApp : " + e);
-        }
-    }
-
-    @Override
-    public List<String> getPersistentApp() {
-        Log.i(TAG, "getPersistentApp");
-
-        try {
-        } catch (Throwable e) {
-            Log.e(TAG, "getPersistentApp : " + e);
-        }
-
-        return super.getPersistentApp();
-    }
-
-    @Override
     public void killApplicationProcess(String packageName) {
         Log.i(TAG, "killApplicationProcess : " + packageName);
 

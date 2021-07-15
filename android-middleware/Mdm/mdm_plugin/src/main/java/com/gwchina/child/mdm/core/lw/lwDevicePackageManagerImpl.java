@@ -7,45 +7,11 @@ import com.gwchina.child.mdm.GwPackageDeleteObserver;
 import com.gwchina.child.mdm.GwPackageInstallObserver;
 import com.gwchina.child.mdm.core.glDevicePackageManagerImpl;
 
-import java.util.List;
-
 public class lwDevicePackageManagerImpl extends glDevicePackageManagerImpl {
     MiaMdmPolicyManager mpm;
 
     public lwDevicePackageManagerImpl(MiaMdmPolicyManager mpm) {
         this.mpm = mpm;
-    }
-
-    @Override
-    public void addDisallowedUninstallPackages(List<String> packageNames) {
-        Log.i(TAG, "addDisallowedUninstallPackages : " + packageNames);
-
-        try {
-        } catch (Throwable e) {
-            Log.e(TAG, "addDisallowedUninstallPackages : " + e);
-        }
-    }
-
-    @Override
-    public void removeDisallowedUninstallPackages(List<String> packageNames) {
-        Log.i(TAG, "removeDisallowedUninstallPackages : " + packageNames);
-
-        try {
-        } catch (Throwable e) {
-            Log.e(TAG, "removeDisallowedUninstallPackages : " + e);
-        }
-    }
-
-    @Override
-    public List<String> getDisallowedUninstallPackageList() {
-        Log.i(TAG, "getDisallowedUninstallPackageList");
-
-        try {
-        } catch (Throwable e) {
-            Log.e(TAG, "getDisallowedUninstallPackageList : " + e);
-        }
-
-        return super.getDisallowedUninstallPackageList();
     }
 
     @Override

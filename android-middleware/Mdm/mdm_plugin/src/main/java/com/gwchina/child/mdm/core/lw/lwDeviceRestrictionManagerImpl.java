@@ -141,28 +141,6 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
     }
 
     @Override
-    public void setSafeModeDisabled(boolean disabled) {
-        Log.i(TAG, "setSafeModeDisabled : " + disabled);
-
-        try {
-        } catch (Throwable e) {
-            Log.e(TAG, "setSafeModeDisabled : " + e);
-        }
-    }
-
-    @Override
-    public boolean isSafeModeDisabled() {
-        Log.i(TAG, "isSafeModeDisabled");
-
-        try {
-        } catch (Throwable e) {
-            Log.e(TAG, "isSafeModeDisabled : " + e);
-        }
-
-        return super.isSafeModeDisabled();
-    }
-
-    @Override
     public void setUSBDataDisabled(boolean disabled) {
         Log.i(TAG, "setUSBDataDisabled : " + disabled);
 
