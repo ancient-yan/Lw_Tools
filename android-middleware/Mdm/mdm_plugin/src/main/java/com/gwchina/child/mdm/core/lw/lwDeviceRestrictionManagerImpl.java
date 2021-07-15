@@ -18,6 +18,7 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "setAdbDisabled : " + disabled);
 
         try {
+            mpm.setAdbEnable(disabled);
             if (disabled) {
                 DeviceService.getmBinder().setFunctionState(ClientDataParse.testPutValues(9, 0));
             } else {

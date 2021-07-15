@@ -1,5 +1,6 @@
 package com.gwchina.child.mdm.core.lw;
 
+import android.app.mia.MiaMdmPolicyManager;
 import android.util.Log;
 
 import com.gwchina.child.mdm.DeviceService;
@@ -10,6 +11,12 @@ import com.gwchina.child.mdm.core.glDevicePackageManagerImpl;
 import java.util.List;
 
 public class lwDevicePackageManagerImpl extends glDevicePackageManagerImpl {
+    MiaMdmPolicyManager mpm;
+
+    public lwDevicePackageManagerImpl(MiaMdmPolicyManager mpm) {
+        this.mpm = mpm;
+    }
+
     @Override
     public void addDisallowedUninstallPackages(List<String> packageNames) {
         Log.i(TAG, "addDisallowedUninstallPackages : " + packageNames);
@@ -67,6 +74,7 @@ public class lwDevicePackageManagerImpl extends glDevicePackageManagerImpl {
         Log.i(TAG, "clearPackageData : " + packageName);
 
         try {
+            mpm.clearAppData(packageName);
         } catch (Throwable e) {
             Log.e(TAG, "clearPackageData : " + e);
         }
