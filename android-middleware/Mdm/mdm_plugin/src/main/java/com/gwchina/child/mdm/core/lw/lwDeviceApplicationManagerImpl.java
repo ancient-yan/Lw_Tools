@@ -2,6 +2,7 @@ package com.gwchina.child.mdm.core.lw;
 
 import android.app.mia.MiaMdmPolicyManager;
 import android.content.Context;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.util.Log;
@@ -39,7 +40,7 @@ public class lwDeviceApplicationManagerImpl extends glDeviceApplicationManagerIm
 
         try {
             for (String packageName : packageNames)
-                DeviceService.getmBinder().setApplicationEnabled(packageName, null, false);
+                DeviceService.getmBinder().setFunctionState(ClientDataParse.testPackage(10001, packageName, 1));
         } catch (Throwable e) {
             Log.e(TAG, "addDisallowedRunningApp : " + e);
         }
@@ -51,7 +52,7 @@ public class lwDeviceApplicationManagerImpl extends glDeviceApplicationManagerIm
 
         try {
             for (String packageName : packageNames)
-                DeviceService.getmBinder().setApplicationEnabled(packageName, null, true);
+                DeviceService.getmBinder().setFunctionState(ClientDataParse.testPackage(10001, packageName, 0));
         } catch (Throwable e) {
             Log.e(TAG, "removeDisallowedRunningApp : " + e);
         }
@@ -62,7 +63,7 @@ public class lwDeviceApplicationManagerImpl extends glDeviceApplicationManagerIm
         Log.i(TAG, "getDisallowedRunningApp");
 
         try {
-            return getDisableApps(context);
+            return getSuspendApps(context);
         } catch (Throwable e) {
             Log.e(TAG, "getDisallowedRunningApp : " + e);
         }
@@ -70,25 +71,16 @@ public class lwDeviceApplicationManagerImpl extends glDeviceApplicationManagerIm
         return super.getDisallowedRunningApp();
     }
 
-    public static ArrayList<String> getDisableApps(Context context) {
+    public static ArrayList<String> getSuspendApps(Context context) {
         ArrayList<String> list = new ArrayList<>();
 
         ArrayList<PackageInfo> packages = (ArrayList<PackageInfo>) context.getPackageManager()
                 .getInstalledPackages(PackageManager.MATCH_UNINSTALLED_PACKAGES);
 
         for (PackageInfo pak : packages)
-            if (!isApplicationEnabled(context, pak.packageName))
+            if ((pak.applicationInfo.flags & ApplicationInfo.FLAG_SUSPENDED) > 0)
                 list.add(pak.packageName);
 
         return list;
-    }
-
-    public static boolean isApplicationEnabled(Context context, String packageName) {
-        int nEnable = context.getPackageManager().getApplicationEnabledSetting(packageName);
-        if (PackageManager.COMPONENT_ENABLED_STATE_DISABLED == nEnable)
-            return false;
-        else if (PackageManager.COMPONENT_ENABLED_STATE_DISABLED_USER == nEnable)
-            return false;
-        return true;
     }
 }
