@@ -2,7 +2,6 @@ package com.gwchina.child.mdm;
 
 import android.app.Activity;
 import android.app.Dialog;
-import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -46,7 +45,7 @@ public class ShowAdminSupportDetailsDialog extends Activity implements DialogInt
             return;
 
             case R.id.text_go: {
-//                StartPackage(this, getPackageName(), new Intent(this, GreenAppLockActivity.class));
+                StartPackage(this, getPackageName(), new Intent("com.txtw.action.activity.LwAccount"));
                 finish();
             }
             return;
@@ -73,7 +72,8 @@ public class ShowAdminSupportDetailsDialog extends Activity implements DialogInt
 
         try {
             context.startActivity(l_intent);
-        } catch (ActivityNotFoundException ex) {
+        } catch (Throwable e) {
+            e.printStackTrace();
         }
     }
 }
