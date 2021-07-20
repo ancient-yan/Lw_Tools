@@ -37,6 +37,17 @@
             </intent-filter>
         </receiver>
 
+        <activity
+            android:name=".ShowAdminSupportDetailsDialog"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTop"
+            android:theme="@style/Transparent">
+            <intent-filter>
+                <action android:name="android.settings.SHOW_ADMIN_SUPPORT_DETAILS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>
