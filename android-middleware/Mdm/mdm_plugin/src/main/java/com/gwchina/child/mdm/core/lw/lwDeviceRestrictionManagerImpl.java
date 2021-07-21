@@ -35,7 +35,7 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
 
         try {
             int nRet = DeviceService.getmBinder().getFunctionState(ClientDataParse.testGetFunction(9));
-            Log.i(TAG, "isAdbDisabled : " + nRet);
+            Log.i(TAG, "isAdbDisabled : " + (0 == nRet));
             return (0 == nRet);
         } catch (Throwable e) {
             Log.e(TAG, "isAdbDisabled : " + e);
@@ -143,6 +143,8 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
     @Override
     public void setUSBDataDisabled(boolean disabled) {
         Log.i(TAG, "setUSBDataDisabled : " + disabled);
+
+        if (!disabled && !isAdbDisabled()) return;//无效设置，会导致adb被意外关闭
 
         try {
             mpm.setOnlyCharging(disabled);
