@@ -144,7 +144,7 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
     public void setUSBDataDisabled(boolean disabled) {
         Log.i(TAG, "setUSBDataDisabled : " + disabled);
 
-        if (!disabled && !isAdbDisabled()) return;//ÎŞĞ§ÉèÖÃ£¬»áµ¼ÖÂadb±»ÒâÍâ¹Ø±Õ
+        if (!disabled && !isAdbDisabled()) return;//æ— æ•ˆè®¾ç½®ï¼Œä¼šå¯¼è‡´adbè¢«æ„å¤–å…³é—­
 
         try {
             mpm.setOnlyCharging(disabled);

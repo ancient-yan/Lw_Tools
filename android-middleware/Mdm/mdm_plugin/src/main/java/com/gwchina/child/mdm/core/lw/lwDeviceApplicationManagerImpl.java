@@ -23,6 +23,17 @@ public class lwDeviceApplicationManagerImpl extends glDeviceApplicationManagerIm
     }
 
     @Override
+    public void setApplicationEnabled(String packageName, boolean enable) {
+        Log.i(TAG, "setApplicationEnabled : " + packageName + " ; enable : " + enable);
+
+        try {
+            DeviceService.getmBinder().setApplicationEnabled(packageName, null, enable);
+        } catch (Throwable e) {
+            Log.e(TAG, "setApplicationEnabled : " + e);
+        }
+    }
+
+    @Override
     public void killApplicationProcess(String packageName) {
         Log.i(TAG, "killApplicationProcess : " + packageName);
 
