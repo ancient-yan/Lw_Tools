@@ -1,72 +1,49 @@
-08-03 16:06:20.630  5151  5151 I child_tools: packageName : com.android.calendar
-08-03 16:06:20.630  5151  5151 I child_tools: strLabel : 日历
-08-03 16:06:20.630  5151  5151 I child_tools: packageName : com.android.contacts
-08-03 16:06:20.630  5151  5151 I child_tools: strLabel : 通讯录
-08-03 16:06:20.630  5151  5151 I child_tools: packageName : com.android.deskclock
-08-03 16:06:20.630  5151  5151 I child_tools: strLabel : 时钟
-08-03 16:06:20.631  5151  5151 I child_tools: packageName : com.android.email
-08-03 16:06:20.631  5151  5151 I child_tools: strLabel : 电子邮件
-08-03 16:06:20.631  5151  5151 I child_tools: packageName : com.android.music
-08-03 16:06:20.631  5151  5151 I child_tools: strLabel : 音乐
-08-03 16:06:20.632  5151  5151 I child_tools: packageName : com.android.settings
-08-03 16:06:20.632  5151  5151 I child_tools: strLabel : 设置
-08-03 16:06:20.632  5151  5151 I child_tools: packageName : com.appwoo.txtw.activity
-08-03 16:06:20.632  5151  5151 I child_tools: strLabel : 格雷盒子
-08-03 16:06:20.632  5151  5151 I child_tools: packageName : com.tblenovo.soundrecorder
-08-03 16:06:20.632  5151  5151 I child_tools: strLabel : 录音机
-08-03 16:06:20.632  5151  5151 I child_tools: packageName : org.codeaurora.gallery
-08-03 16:06:20.632  5151  5151 I child_tools: strLabel : 图库
-08-03 16:06:20.633  5151  5151 I child_tools: packageName : org.codeaurora.snapcam
-08-03 16:06:20.633  5151  5151 I child_tools: strLabel : 相机
-08-03 16:06:20.633  5151  5151 I child_tools: packageName : com.baidu.input
-08-03 16:06:20.633  5151  5151 I child_tools: strLabel : 百度输入法
-08-03 16:06:20.633  5151  5151 I child_tools: packageName : com.gwchina.lssw.child.tools
-08-03 16:06:20.633  5151  5151 I child_tools: strLabel : child tools
-08-03 16:06:20.633  5151  5151 I child_tools: packageName : cn.gwchina.zvke
-08-03 16:06:20.634  5151  5151 I child_tools: strLabel : 智·微课
-08-03 16:06:20.634  5151  5151 I child_tools: packageName : com.android.calculator2
-08-03 16:06:20.634  5151  5151 I child_tools: strLabel : 计算器
-08-03 16:06:20.634  5151  5151 I child_tools: packageName : com.appwoo.txtw.activity
-08-03 16:06:20.634  5151  5151 I child_tools: strLabel : 格雷盒子
-08-03 16:06:20.634  5151  5151 I child_tools: packageName : com.appwoo.txtw.activity
-08-03 16:06:20.634  5151  5151 I child_tools: strLabel : 格雷盒子
-08-03 16:06:20.635  5151  5151 I child_tools: packageName : com.appwoo.txtw.activity.chat
-08-03 16:06:20.635  5151  5151 I child_tools: strLabel : 格雷微聊
-08-03 16:06:20.635  5151  5151 I child_tools: packageName : com.browser.txtw
-08-03 16:06:20.635  5151  5151 I child_tools: strLabel : 绿网浏览器
-08-03 16:06:20.635  5151  5151 I child_tools: packageName : com.caf.fmradio
-08-03 16:06:20.635  5151  5151 I child_tools: strLabel : 调频收音机
-08-03 16:06:20.636  5151  5151 I child_tools: packageName : com.dolby.daxappui
-08-03 16:06:20.636  5151  5151 I child_tools: strLabel : Dolby Atmos
-08-03 16:06:20.636  5151  5151 I child_tools: packageName : com.example.newnewlxccxyv_4
-08-03 16:06:20.636  5151  5151 I child_tools: strLabel : 成才学院
-08-03 16:06:20.636  5151  5151 I child_tools: packageName : com.gwchina.market.activity
-08-03 16:06:20.636  5151  5151 I child_tools: strLabel : 绿网市场
-08-03 16:06:20.637  5151  5151 I child_tools: packageName : com.lenovo.tabm10
-08-03 16:06:20.637  5151  5151 I child_tools: strLabel : Lenovo Tab M10
-08-03 16:06:20.637  5151  5151 I child_tools: packageName : com.qualcomm.qti.logkit
-08-03 16:06:20.637  5151  5151 I child_tools: strLabel : QTI Logkit
-08-03 16:06:20.637  5151  5151 I child_tools: packageName : com.txtw.green.one
-08-03 16:06:20.637  5151  5151 I child_tools: strLabel : 智习客
-08-03 16:06:20.637  5151  5151 I child_tools: packageName : com.txtw.learn.txtw_learn
-08-03 16:06:20.637  5151  5151 I child_tools: strLabel : 学习宝盒
-08-03 16:06:20.638  5151  5151 I child_tools: packageName : cn.ait.tsk.student
-08-03 16:06:20.638  5151  5151 I child_tools: strLabel : 爱老师学生端
-08-03 16:06:20.638  5151  5151 I child_tools: packageName : com.able.wisdomtree
-08-03 16:06:20.638  5151  5151 I child_tools: strLabel : 知到
-08-03 16:06:20.638  5151  5151 I child_tools: packageName : com.appwoo.txtw.theme.deepblack
-08-03 16:06:20.638  5151  5151 I child_tools: strLabel : child tools
-08-03 16:06:20.639  5151  5151 I child_tools: packageName : com.hengtiansoft.tgedu.checkanswer
-08-03 16:06:20.639  5151  5151 I child_tools: strLabel : 作业大师
-08-03 16:06:20.639  5151  5151 I child_tools: packageName : com.lenovo.browser
-08-03 16:06:20.639  5151  5151 I child_tools: strLabel : 浏览器
-08-03 16:06:20.639  5151  5151 I child_tools: packageName : com.microsoft.office.excel
-08-03 16:06:20.639  5151  5151 I child_tools: strLabel : Microsoft Excel
-08-03 16:06:20.639  5151  5151 I child_tools: packageName : com.microsoft.office.onenote
-08-03 16:06:20.640  5151  5151 I child_tools: strLabel : OneNote
-08-03 16:06:20.640  5151  5151 I child_tools: packageName : com.microsoft.office.powerpoint
-08-03 16:06:20.640  5151  5151 I child_tools: strLabel : Microsoft PowerPoint
-08-03 16:06:20.640  5151  5151 I child_tools: packageName : com.microsoft.office.word
-08-03 16:06:20.640  5151  5151 I child_tools: strLabel : Microsoft Word
-08-03 16:06:20.641  5151  5151 I child_tools: packageName : com.yangcong345.onionschool
-08-03 16:06:20.641  5151  5151 I child_tools: strLabel : 洋葱学院校园版
+日历 : com.android.calendar
+
+通讯录 : com.android.contacts
+
+时钟 : com.android.deskclock
+
+电子邮件 : com.android.email
+
+音乐 : com.android.music
+
+设置 : com.android.settings
+
+录音机 : com.tblenovo.soundrecorder
+
+图库 : org.codeaurora.gallery
+
+相机 : org.codeaurora.snapcam
+
+百度输入法 : com.baidu.input
+
+智·微课 : cn.gwchina.zvke
+
+计算器 : com.android.calculator2
+
+格雷微聊 : com.appwoo.txtw.activity.chat
+
+绿网浏览器 : com.browser.txtw
+
+调频收音机 : com.caf.fmradio
+
+Dolby Atmos : com.dolby.daxappui
+
+绿网市场 : com.gwchina.market.activity
+
+Lenovo Tab M10 : com.lenovo.tabm10
+
+智习客 : com.txtw.green.one
+
+学习宝盒 : com.txtw.learn.txtw_learn
+
+浏览器 : com.lenovo.browser
+
+Microsoft Excel : com.microsoft.office.excel
+
+OneNote : com.microsoft.office.onenote
+
+Microsoft PowerPoint : com.microsoft.office.powerpoint
+
+Microsoft Word : com.microsoft.office.word
