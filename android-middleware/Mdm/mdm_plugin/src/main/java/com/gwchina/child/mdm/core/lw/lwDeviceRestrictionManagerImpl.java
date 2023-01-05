@@ -3,7 +3,6 @@ package com.gwchina.child.mdm.core.lw;
 import android.app.mia.MiaMdmPolicyManager;
 import android.util.Log;
 
-import com.gwchina.child.mdm.DeviceService;
 import com.gwchina.child.mdm.core.glDeviceRestrictionManagerImpl;
 
 public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerImpl {
@@ -18,12 +17,7 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "setAdbDisabled : " + disabled);
 
         try {
-//            mpm.setAdbEnable(disabled);
-            if (disabled) {
-//                DeviceService.getmBinder().setFunctionState(ClientDataParse.testPutValues(9, 0));
-            } else {
-//                DeviceService.getmBinder().setFunctionState(ClientDataParse.testPutValues(9, 1));
-            }
+            mpm.setUsbOnlyCharging(disabled);
         } catch (Throwable e) {
             Log.e(TAG, "setAdbDisabled : " + e);
         }
