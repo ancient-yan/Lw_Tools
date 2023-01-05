@@ -55,43 +55,4 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
             Log.e(TAG, "setBackButtonDisabled : " + e);
         }
     }
-
-    @Override
-    public boolean isBackButtonDisabled() {
-        Log.i(TAG, "isBackButtonDisabled");
-
-        try {
-            return !mpm.isControlBackKey();
-        } catch (Throwable e) {
-            Log.e(TAG, "isBackButtonDisabled : " + e);
-        }
-
-        return super.isBackButtonDisabled();
-    }
-
-    @Override
-    public void setUSBDataDisabled(boolean disabled) {
-        Log.i(TAG, "setUSBDataDisabled : " + disabled);
-
-        if (!disabled && !isAdbDisabled()) return;//无效设置，会导致adb被意外关闭
-
-        try {
-//            mpm.setOnlyCharging(disabled);
-        } catch (Throwable e) {
-            Log.e(TAG, "setUSBDataDisabled : " + e);
-        }
-    }
-
-    @Override
-    public boolean isUSBDataDisabled() {
-        Log.i(TAG, "isUSBDataDisabled");
-
-        try {
-//            return mpm.isUsbOnlyCharging();
-        } catch (Throwable e) {
-            Log.e(TAG, "isUSBDataDisabled : " + e);
-        }
-
-        return super.isUSBDataDisabled();
-    }
 }
