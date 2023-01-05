@@ -26,7 +26,7 @@ public class lwDeviceApplicationManagerImpl extends glDeviceApplicationManagerIm
         Log.i(TAG, "setApplicationEnabled : " + packageName + " ; enable : " + enable);
 
         try {
-
+            mpm.controlApp(packageName, !enable);
         } catch (Throwable e) {
             Log.e(TAG, "setApplicationEnabled : " + e);
         }
