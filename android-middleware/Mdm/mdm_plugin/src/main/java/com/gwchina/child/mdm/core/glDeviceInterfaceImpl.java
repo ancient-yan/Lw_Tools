@@ -4,7 +4,6 @@ import android.app.mia.MiaMdmPolicyManager;
 import android.content.Context;
 import android.util.Log;
 
-import com.gwchina.child.mdm.DeviceService;
 import com.gwchina.child.mdm.GwDeviceApplicationManager;
 import com.gwchina.child.mdm.GwDeviceCameraManager;
 import com.gwchina.child.mdm.GwDeviceControlManager;
@@ -47,8 +46,6 @@ public class glDeviceInterfaceImpl extends AbstractDeviceInterfaceImpl {
 
     @Override
     public boolean init(String key) {
-        if (null == DeviceService.getmBinder()) throw new NullPointerException("getmBinder null");
-
         MiaMdmPolicyManager mpm;
         try {
             mpm = new MiaMdmPolicyManager(context.getApplicationContext());

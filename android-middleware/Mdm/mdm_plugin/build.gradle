@@ -17,18 +17,25 @@ android {
             keyPassword 'www.txtws.com'
             storeFile file('..\\..\\..\\..\\config\\common.keystore')
         }
+
+        gl {
+            storePassword 'gwchina.cn831084@@txtws.com'
+            keyAlias 'txtws'
+            keyPassword 'gwchina.cn831084@@txtws.com'
+            storeFile file('..\\..\\..\\..\\config\\Release.jks')
+        }
     }
 
     buildTypes {
         release {
             minifyEnabled false
-            signingConfig signingConfigs.lw
+            signingConfig signingConfigs.gl
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
 
         debug {
             minifyEnabled false
-            signingConfig signingConfigs.lw
+            signingConfig release.signingConfig
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
