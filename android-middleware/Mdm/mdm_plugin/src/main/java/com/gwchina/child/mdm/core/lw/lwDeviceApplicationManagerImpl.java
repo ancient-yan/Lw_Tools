@@ -7,7 +7,6 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.util.Log;
 
-import com.gwchina.child.mdm.DeviceService;
 import com.gwchina.child.mdm.core.glDeviceApplicationManagerImpl;
 
 import java.util.ArrayList;
@@ -27,7 +26,7 @@ public class lwDeviceApplicationManagerImpl extends glDeviceApplicationManagerIm
         Log.i(TAG, "setApplicationEnabled : " + packageName + " ; enable : " + enable);
 
         try {
-            DeviceService.getmBinder().setApplicationEnabled(packageName, null, enable);
+
         } catch (Throwable e) {
             Log.e(TAG, "setApplicationEnabled : " + e);
         }
@@ -39,7 +38,6 @@ public class lwDeviceApplicationManagerImpl extends glDeviceApplicationManagerIm
 
         try {
             mpm.killApp(packageName);
-            DeviceService.getmBinder().forceStopPackage(packageName);
         } catch (Throwable e) {
             Log.e(TAG, "killApplicationProcess : " + e);
         }
@@ -50,8 +48,8 @@ public class lwDeviceApplicationManagerImpl extends glDeviceApplicationManagerIm
         Log.i(TAG, "addDisallowedRunningApp : " + packageNames);
 
         try {
-            for (String packageName : packageNames)
-                DeviceService.getmBinder().setFunctionState(ClientDataParse.testPackage(10001, packageName, 1));
+            for (String packageName : packageNames);
+//                DeviceService.getmBinder().setFunctionState(ClientDataParse.testPackage(10001, packageName, 1));
         } catch (Throwable e) {
             Log.e(TAG, "addDisallowedRunningApp : " + e);
         }
@@ -62,8 +60,8 @@ public class lwDeviceApplicationManagerImpl extends glDeviceApplicationManagerIm
         Log.i(TAG, "removeDisallowedRunningApp : " + packageNames);
 
         try {
-            for (String packageName : packageNames)
-                DeviceService.getmBinder().setFunctionState(ClientDataParse.testPackage(10001, packageName, 0));
+            for (String packageName : packageNames);
+//                DeviceService.getmBinder().setFunctionState(ClientDataParse.testPackage(10001, packageName, 0));
         } catch (Throwable e) {
             Log.e(TAG, "removeDisallowedRunningApp : " + e);
         }

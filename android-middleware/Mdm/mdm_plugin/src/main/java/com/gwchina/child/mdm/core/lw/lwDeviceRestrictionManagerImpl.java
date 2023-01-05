@@ -20,9 +20,9 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         try {
             mpm.setAdbEnable(disabled);
             if (disabled) {
-                DeviceService.getmBinder().setFunctionState(ClientDataParse.testPutValues(9, 0));
+//                DeviceService.getmBinder().setFunctionState(ClientDataParse.testPutValues(9, 0));
             } else {
-                DeviceService.getmBinder().setFunctionState(ClientDataParse.testPutValues(9, 1));
+//                DeviceService.getmBinder().setFunctionState(ClientDataParse.testPutValues(9, 1));
             }
         } catch (Throwable e) {
             Log.e(TAG, "setAdbDisabled : " + e);
@@ -34,9 +34,9 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "isAdbDisabled");
 
         try {
-            int nRet = DeviceService.getmBinder().getFunctionState(ClientDataParse.testGetFunction(9));
-            Log.i(TAG, "isAdbDisabled : " + (0 == nRet));
-            return (0 == nRet);
+//            int nRet = DeviceService.getmBinder().getFunctionState(ClientDataParse.testGetFunction(9));
+//            Log.i(TAG, "isAdbDisabled : " + (0 == nRet));
+//            return (0 == nRet);
         } catch (Throwable e) {
             Log.e(TAG, "isAdbDisabled : " + e);
         }
