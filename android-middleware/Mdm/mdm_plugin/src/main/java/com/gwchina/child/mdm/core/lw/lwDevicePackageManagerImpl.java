@@ -41,7 +41,7 @@ public class lwDevicePackageManagerImpl extends glDevicePackageManagerImpl {
         Log.i(TAG, "clearPackageData : " + packageName);
 
         try {
-            mpm.clearAppData(packageName);
+//            mpm.clearAppData(packageName);
         } catch (Throwable e) {
             Log.e(TAG, "clearPackageData : " + e);
         }

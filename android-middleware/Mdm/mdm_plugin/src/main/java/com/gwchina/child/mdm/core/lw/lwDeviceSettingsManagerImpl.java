@@ -17,7 +17,7 @@ public class lwDeviceSettingsManagerImpl extends glDeviceSettingsManagerImpl {
         Log.i(TAG, "setRestoreFactoryDisabled : " + disable);
 
         try {
-            mpm.setReset(disable);
+//            mpm.setReset(disable);
         } catch (Throwable e) {
             Log.e(TAG, "setRestoreFactoryDisabled : " + e);
         }

@@ -37,7 +37,7 @@ public class lwDeviceApplicationManagerImpl extends glDeviceApplicationManagerIm
         Log.i(TAG, "killApplicationProcess : " + packageName);
 
         try {
-            mpm.killApp(packageName);
+//            mpm.killApp(packageName);
         } catch (Throwable e) {
             Log.e(TAG, "killApplicationProcess : " + e);
         }

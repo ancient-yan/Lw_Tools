@@ -39,7 +39,7 @@ public class lwDeviceControlManagerImpl extends glDeviceControlManagerImpl {
         Log.i(TAG, "setDefaultLauncher : " + packageName + "/" + className);
 
         try {
-            mpm.setCustomLauncher(packageName);
+//            mpm.setCustomLauncher(packageName);
         } catch (Throwable e) {
             Log.e(TAG, "setDefaultLauncher : " + e);
         }
@@ -50,7 +50,7 @@ public class lwDeviceControlManagerImpl extends glDeviceControlManagerImpl {
         Log.i(TAG, "clearDefaultLauncher");
 
         try {
-            mpm.clearCustomLauncher();
+//            mpm.clearCustomLauncher();
         } catch (Throwable e) {
             Log.e(TAG, "clearDefaultLauncher : " + e);
         }

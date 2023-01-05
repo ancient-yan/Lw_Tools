@@ -18,7 +18,7 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "setAdbDisabled : " + disabled);
 
         try {
-            mpm.setAdbEnable(disabled);
+//            mpm.setAdbEnable(disabled);
             if (disabled) {
 //                DeviceService.getmBinder().setFunctionState(ClientDataParse.testPutValues(9, 0));
             } else {
@@ -49,7 +49,7 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "setStatusBarExpandPanelDisabled : " + disabled);
 
         try {
-            mpm.setStatusBar(disabled);
+//            mpm.setStatusBar(disabled);
         } catch (Throwable e) {
             Log.e(TAG, "setStatusBarExpandPanelDisabled : " + e);
         }
@@ -60,7 +60,7 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "isStatusBarExpandPanelDisabled");
 
         try {
-            return !mpm.isControlStatus();
+//            return !mpm.isControlStatus();
         } catch (Throwable e) {
             Log.e(TAG, "isStatusBarExpandPanelDisabled : " + e);
         }
@@ -147,7 +147,7 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         if (!disabled && !isAdbDisabled()) return;//无效设置，会导致adb被意外关闭
 
         try {
-            mpm.setOnlyCharging(disabled);
+//            mpm.setOnlyCharging(disabled);
         } catch (Throwable e) {
             Log.e(TAG, "setUSBDataDisabled : " + e);
         }
@@ -158,7 +158,7 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
         Log.i(TAG, "isUSBDataDisabled");
 
         try {
-            return mpm.isUsbOnlyCharging();
+//            return mpm.isUsbOnlyCharging();
         } catch (Throwable e) {
             Log.e(TAG, "isUSBDataDisabled : " + e);
         }
