@@ -33,26 +33,4 @@ public class lwDeviceControlManagerImpl extends glDeviceControlManagerImpl {
             Log.e(TAG, "rebootDevice : " + e);
         }
     }
-
-    @Override
-    public void setDefaultLauncher(String packageName, String className) {
-        Log.i(TAG, "setDefaultLauncher : " + packageName + "/" + className);
-
-        try {
-//            mpm.setCustomLauncher(packageName);
-        } catch (Throwable e) {
-            Log.e(TAG, "setDefaultLauncher : " + e);
-        }
-    }
-
-    @Override
-    public void clearDefaultLauncher() {
-        Log.i(TAG, "clearDefaultLauncher");
-
-        try {
-//            mpm.clearCustomLauncher();
-        } catch (Throwable e) {
-            Log.e(TAG, "clearDefaultLauncher : " + e);
-        }
-    }
 }
