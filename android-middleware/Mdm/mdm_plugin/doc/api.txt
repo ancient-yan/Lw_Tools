@@ -1,0 +1,145 @@
+01-05 16:30:57.077  2615  2627 I my_log  : Method :APPIPBlackListRead
+01-05 16:30:57.078  2615  2627 I my_log  : returnType : java.util.List
+01-05 16:30:57.078  2615  2627 I my_log  : Method :APPIPWhiteListRead
+01-05 16:30:57.078  2615  2627 I my_log  : returnType : java.util.List
+01-05 16:30:57.078  2615  2627 I my_log  : Method :AddAppBlackRule
+01-05 16:30:57.078  2615  2627 I my_log  : returnType : boolean
+01-05 16:30:57.078  2615  2627 I my_log  : parameterName : java.lang.String
+01-05 16:30:57.078  2615  2627 I my_log  : Method :AddAppWhiteRule
+01-05 16:30:57.078  2615  2627 I my_log  : returnType : boolean
+01-05 16:30:57.078  2615  2627 I my_log  : parameterName : java.lang.String
+01-05 16:30:57.078  2615  2627 I my_log  : Method :ClearAppRules
+01-05 16:30:57.079  2615  2627 I my_log  : returnType : boolean
+01-05 16:30:57.079  2615  2627 I my_log  : Method :ClearURLListRules
+01-05 16:30:57.079  2615  2627 I my_log  : returnType : boolean
+01-05 16:30:57.079  2615  2627 I my_log  : Method :MiaSystemSetting
+01-05 16:30:57.079  2615  2627 I my_log  : returnType : void
+01-05 16:30:57.079  2615  2627 I my_log  : parameterName : java.lang.String
+01-05 16:30:57.079  2615  2627 I my_log  : parameterName : int
+01-05 16:30:57.079  2615  2627 I my_log  : Method :allowBluetoothDataTransfer
+01-05 16:30:57.080  2615  2627 I my_log  : returnType : boolean
+01-05 16:30:57.080  2615  2627 I my_log  : parameterName : boolean
+01-05 16:30:57.080  2615  2627 I my_log  : Method :appWhiteListRead
+01-05 16:30:57.080  2615  2627 I my_log  : returnType : java.util.List
+01-05 16:30:57.080  2615  2627 I my_log  : Method :appWhiteListWrite
+01-05 16:30:57.080  2615  2627 I my_log  : returnType : boolean
+01-05 16:30:57.080  2615  2627 I my_log  : parameterName : java.util.List
+01-05 16:30:57.080  2615  2627 I my_log  : Method :controlApp
+01-05 16:30:57.080  2615  2627 I my_log  : returnType : void
+01-05 16:30:57.081  2615  2627 I my_log  : parameterName : java.lang.String
+01-05 16:30:57.081  2615  2627 I my_log  : parameterName : boolean
+01-05 16:30:57.081  2615  2627 I my_log  : Method :deleteLockPattern
+01-05 16:30:57.081  2615  2627 I my_log  : returnType : void
+01-05 16:30:57.081  2615  2627 I my_log  : parameterName : int
+01-05 16:30:57.081  2615  2627 I my_log  : Method :equals
+01-05 16:30:57.081  2615  2627 I my_log  : returnType : boolean
+01-05 16:30:57.081  2615  2627 I my_log  : parameterName : java.lang.Object
+01-05 16:30:57.081  2615  2627 I my_log  : Method :forceStopPackageWhiteListRead
+01-05 16:30:57.081  2615  2627 I my_log  : returnType : java.util.List
+01-05 16:30:57.081  2615  2627 I my_log  : Method :forceStopPackageWhiteListWrite
+01-05 16:30:57.082  2615  2627 I my_log  : returnType : boolean
+01-05 16:30:57.082  2615  2627 I my_log  : parameterName : java.util.List
+01-05 16:30:57.082  2615  2627 I my_log  : Method :getBtStatus
+01-05 16:30:57.082  2615  2627 I my_log  : returnType : java.lang.String
+01-05 16:30:57.082  2615  2627 I my_log  : Method :getClass
+01-05 16:30:57.082  2615  2627 I my_log  : returnType : java.lang.Class
+01-05 16:30:57.082  2615  2627 I my_log  : Method :getMiaBuildNumber
+01-05 16:30:57.082  2615  2627 I my_log  : returnType : java.lang.String
+01-05 16:30:57.082  2615  2627 I my_log  : Method :getWifiStatus
+01-05 16:30:57.082  2615  2627 I my_log  : returnType : java.lang.String
+01-05 16:30:57.082  2615  2627 I my_log  : Method :hashCode
+01-05 16:30:57.083  2615  2627 I my_log  : returnType : int
+01-05 16:30:57.083  2615  2627 I my_log  : Method :isControlBackKey
+01-05 16:30:57.083  2615  2627 I my_log  : returnType : boolean
+01-05 16:30:57.083  2615  2627 I my_log  : Method :isControlHomeKey
+01-05 16:30:57.083  2615  2627 I my_log  : returnType : boolean
+01-05 16:30:57.083  2615  2627 I my_log  : Method :isControlRecentsKey
+01-05 16:30:57.083  2615  2627 I my_log  : returnType : boolean
+01-05 16:30:57.083  2615  2627 I my_log  : Method :isControlmiaNavigaView
+01-05 16:30:57.083  2615  2627 I my_log  : returnType : boolean
+01-05 16:30:57.083  2615  2627 I my_log  : Method :isForbidTFcard
+01-05 16:30:57.083  2615  2627 I my_log  : returnType : boolean
+01-05 16:30:57.083  2615  2627 I my_log  : Method :masterClearInbulitSD
+01-05 16:30:57.083  2615  2627 I my_log  : returnType : void
+01-05 16:30:57.083  2615  2627 I my_log  : Method :notify
+01-05 16:30:57.084  2615  2627 I my_log  : returnType : void
+01-05 16:30:57.084  2615  2627 I my_log  : Method :notifyAll
+01-05 16:30:57.084  2615  2627 I my_log  : returnType : void
+01-05 16:30:57.084  2615  2627 I my_log  : Method :reBoot
+01-05 16:30:57.084  2615  2627 I my_log  : returnType : void
+01-05 16:30:57.084  2615  2627 I my_log  : Method :setBackKey
+01-05 16:30:57.084  2615  2627 I my_log  : returnType : void
+01-05 16:30:57.084  2615  2627 I my_log  : parameterName : boolean
+01-05 16:30:57.084  2615  2627 I my_log  : Method :setCamera
+01-05 16:30:57.085  2615  2627 I my_log  : returnType : void
+01-05 16:30:57.085  2615  2627 I my_log  : parameterName : boolean
+01-05 16:30:57.085  2615  2627 I my_log  : Method :setGps
+01-05 16:30:57.085  2615  2627 I my_log  : returnType : boolean
+01-05 16:30:57.085  2615  2627 I my_log  : parameterName : boolean
+01-05 16:30:57.085  2615  2627 I my_log  : Method :setHomeKey
+01-05 16:30:57.085  2615  2627 I my_log  : returnType : void
+01-05 16:30:57.085  2615  2627 I my_log  : parameterName : boolean
+01-05 16:30:57.085  2615  2627 I my_log  : Method :setOTA
+01-05 16:30:57.085  2615  2627 I my_log  : returnType : void
+01-05 16:30:57.085  2615  2627 I my_log  : parameterName : boolean
+01-05 16:30:57.085  2615  2627 I my_log  : Method :setPowerLongPressKey
+01-05 16:30:57.085  2615  2627 I my_log  : returnType : void
+01-05 16:30:57.085  2615  2627 I my_log  : parameterName : boolean
+01-05 16:30:57.086  2615  2627 I my_log  : Method :setPowerSingleClickKey
+01-05 16:30:57.086  2615  2627 I my_log  : returnType : void
+01-05 16:30:57.086  2615  2627 I my_log  : parameterName : boolean
+01-05 16:30:57.086  2615  2627 I my_log  : Method :setRecentKey
+01-05 16:30:57.086  2615  2627 I my_log  : returnType : void
+01-05 16:30:57.086  2615  2627 I my_log  : parameterName : boolean
+01-05 16:30:57.086  2615  2627 I my_log  : Method :setTFcard
+01-05 16:30:57.086  2615  2627 I my_log  : returnType : void
+01-05 16:30:57.086  2615  2627 I my_log  : parameterName : boolean
+01-05 16:30:57.087  2615  2627 I my_log  : Method :setUsbOnlyCharging
+01-05 16:30:57.087  2615  2627 I my_log  : returnType : void
+01-05 16:30:57.087  2615  2627 I my_log  : parameterName : boolean
+01-05 16:30:57.087  2615  2627 I my_log  : Method :setVolumedownKey
+01-05 16:30:57.087  2615  2627 I my_log  : returnType : void
+01-05 16:30:57.087  2615  2627 I my_log  : parameterName : boolean
+01-05 16:30:57.087  2615  2627 I my_log  : Method :setVolumeupKey
+01-05 16:30:57.087  2615  2627 I my_log  : returnType : void
+01-05 16:30:57.087  2615  2627 I my_log  : parameterName : boolean
+01-05 16:30:57.087  2615  2627 I my_log  : Method :setWifiProxy
+01-05 16:30:57.087  2615  2627 I my_log  : returnType : void
+01-05 16:30:57.088  2615  2627 I my_log  : parameterName : boolean
+01-05 16:30:57.088  2615  2627 I my_log  : Method :shutDown
+01-05 16:30:57.088  2615  2627 I my_log  : returnType : void
+01-05 16:30:57.088  2615  2627 I my_log  : Method :silentInstall
+01-05 16:30:57.088  2615  2627 I my_log  : returnType : void
+01-05 16:30:57.088  2615  2627 I my_log  : parameterName : java.lang.String
+01-05 16:30:57.088  2615  2627 I my_log  : Method :silentUnInstall
+01-05 16:30:57.088  2615  2627 I my_log  : returnType : void
+01-05 16:30:57.088  2615  2627 I my_log  : parameterName : java.lang.String
+01-05 16:30:57.088  2615  2627 I my_log  : Method :toString
+01-05 16:30:57.089  2615  2627 I my_log  : returnType : java.lang.String
+01-05 16:30:57.089  2615  2627 I my_log  : Method :updateSystemTime
+01-05 16:30:57.089  2615  2627 I my_log  : returnType : boolean
+01-05 16:30:57.089  2615  2627 I my_log  : parameterName : java.lang.String
+01-05 16:30:57.089  2615  2627 I my_log  : Method :urlBlackListRead
+01-05 16:30:57.089  2615  2627 I my_log  : returnType : java.util.List
+01-05 16:30:57.089  2615  2627 I my_log  : Method :urlBlackListWrite
+01-05 16:30:57.089  2615  2627 I my_log  : returnType : boolean
+01-05 16:30:57.089  2615  2627 I my_log  : parameterName : java.util.List
+01-05 16:30:57.089  2615  2627 I my_log  : Method :urlSetEnable
+01-05 16:30:57.089  2615  2627 I my_log  : returnType : boolean
+01-05 16:30:57.090  2615  2627 I my_log  : parameterName : boolean
+01-05 16:30:57.090  2615  2627 I my_log  : Method :urlWhiteListRead
+01-05 16:30:57.090  2615  2627 I my_log  : returnType : java.util.List
+01-05 16:30:57.090  2615  2627 I my_log  : Method :urlWhiteListWrite
+01-05 16:30:57.090  2615  2627 I my_log  : returnType : boolean
+01-05 16:30:57.090  2615  2627 I my_log  : parameterName : java.util.List
+01-05 16:30:57.090  2615  2627 I my_log  : Method :wait
+01-05 16:30:57.090  2615  2627 I my_log  : returnType : void
+01-05 16:30:57.090  2615  2627 I my_log  : Method :wait
+01-05 16:30:57.090  2615  2627 I my_log  : returnType : void
+01-05 16:30:57.090  2615  2627 I my_log  : parameterName : long
+01-05 16:30:57.090  2615  2627 I my_log  : Method :wait
+01-05 16:30:57.091  2615  2627 I my_log  : returnType : void
+01-05 16:30:57.095  2615  2627 I my_log  : parameterName : long
+01-05 16:30:57.095  2615  2627 I my_log  : parameterName : int
+01-05 16:30:57.095  2615  2627 I my_log  : Method :wirteIPV6
+01-05 16:30:57.095  2615  2627 I my_log  : returnType : void
