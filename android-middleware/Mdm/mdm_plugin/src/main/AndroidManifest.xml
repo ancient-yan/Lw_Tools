@@ -29,14 +29,6 @@
             </intent-filter>
         </service>
 
-        <receiver
-            android:name=".FilterSoftBroadcastReceiver"
-            android:excludeFromRecents="true">
-            <intent-filter>
-                <action android:name="com.txtw.package.verify.receiver" />
-            </intent-filter>
-        </receiver>
-
         <activity
             android:name=".ShowAdminSupportDetailsDialog"
             android:excludeFromRecents="true"
