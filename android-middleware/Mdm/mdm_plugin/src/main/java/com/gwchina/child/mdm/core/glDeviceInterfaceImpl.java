@@ -20,6 +20,7 @@ import com.gwchina.child.mdm.core.lw.lwDeviceControlManagerImpl;
 import com.gwchina.child.mdm.core.lw.lwDevicePackageManagerImpl;
 import com.gwchina.child.mdm.core.lw.lwDeviceRestrictionManagerImpl;
 import com.gwchina.child.mdm.core.lw.lwDeviceSettingsManagerImpl;
+import com.gwchina.child.mdm.core.lw.lwDeviceTelephonyManagerImpl;
 
 public class glDeviceInterfaceImpl extends AbstractDeviceInterfaceImpl {
     Context context;
@@ -59,6 +60,7 @@ public class glDeviceInterfaceImpl extends AbstractDeviceInterfaceImpl {
         mDeviceSettingsManager = new lwDeviceSettingsManagerImpl(mpm);
         mDeviceApplicationManager = new lwDeviceApplicationManagerImpl(mpm, context);
         mDevicePackageManager = new lwDevicePackageManagerImpl(mpm);
+        mDeviceTelephonyManager = new lwDeviceTelephonyManagerImpl(mpm, context);
 
         return true;
     }
