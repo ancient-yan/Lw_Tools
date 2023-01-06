@@ -54,7 +54,7 @@ public class glDeviceInterfaceImpl extends AbstractDeviceInterfaceImpl {
             throw new NullPointerException("MiaMdmPolicyManager null");
         }
 
-        mDeviceControlManager = new lwDeviceControlManagerImpl(mpm);
+        mDeviceControlManager = new lwDeviceControlManagerImpl(mpm, context);
         mDeviceRestrictionManager = new lwDeviceRestrictionManagerImpl(mpm);
         mDeviceSettingsManager = new lwDeviceSettingsManagerImpl(mpm);
         mDeviceApplicationManager = new lwDeviceApplicationManagerImpl(mpm, context);
