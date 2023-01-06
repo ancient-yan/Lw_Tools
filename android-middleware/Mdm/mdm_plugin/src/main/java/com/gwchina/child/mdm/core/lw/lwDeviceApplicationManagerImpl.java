@@ -112,4 +112,45 @@ public class lwDeviceApplicationManagerImpl extends glDeviceApplicationManagerIm
             return false;
         return true;
     }
+
+    @Override
+    public void addPersistentApp(List<String> packageNames) {
+        Log.i(TAG, "addPersistentApp : " + packageNames);
+        List<String> allPackageNames = new ArrayList<>();
+
+        try {
+            allPackageNames.addAll(mpm.forceStopPackageWhiteListRead());
+
+            for (String packageName : packageNames)
+                if (!allPackageNames.contains(packageName))
+                    allPackageNames.add(packageName);
+
+            mpm.forceStopPackageWhiteListWrite(allPackageNames);
+        } catch (Throwable e) {
+            Log.e(TAG, "addPersistentApp : " + e);
+        }
+    }
+
+    @Override
+    public void removePersistentApp(List<String> packageNames) {
+        Log.i(TAG, "removePersistentApp : " + packageNames);
+        List<String> allPackageNames = new ArrayList<>();
+
+        try {
+            allPackageNames.addAll(mpm.forceStopPackageWhiteListRead());
+
+            for (String packageName : packageNames)
+                if (allPackageNames.contains(packageName))
+                    allPackageNames.remove(packageName);
+
+            mpm.forceStopPackageWhiteListWrite(allPackageNames);
+        } catch (Throwable e) {
+            Log.e(TAG, "removePersistentApp : " + e);
+        }
+    }
+
+    @Override
+    public List<String> getPersistentApp() {
+        return mpm.forceStopPackageWhiteListRead();
+    }
 }
