@@ -60,8 +60,8 @@ public class lwDeviceApplicationManagerImpl extends glDeviceApplicationManagerIm
         Log.i(TAG, "addDisallowedRunningApp : " + packageNames);
 
         try {
-            for (String packageName : packageNames) ;
-//                DeviceService.getmBinder().setFunctionState(ClientDataParse.testPackage(10001, packageName, 1));
+            for (String packageName : packageNames)
+                mpm.controlApp(packageName, true);
         } catch (Throwable e) {
             Log.e(TAG, "addDisallowedRunningApp : " + e);
         }
@@ -72,8 +72,8 @@ public class lwDeviceApplicationManagerImpl extends glDeviceApplicationManagerIm
         Log.i(TAG, "removeDisallowedRunningApp : " + packageNames);
 
         try {
-            for (String packageName : packageNames) ;
-//                DeviceService.getmBinder().setFunctionState(ClientDataParse.testPackage(10001, packageName, 0));
+            for (String packageName : packageNames)
+                mpm.controlApp(packageName, false);
         } catch (Throwable e) {
             Log.e(TAG, "removeDisallowedRunningApp : " + e);
         }
