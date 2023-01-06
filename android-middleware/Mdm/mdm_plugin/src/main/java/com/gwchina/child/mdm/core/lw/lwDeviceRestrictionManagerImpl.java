@@ -55,4 +55,15 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
             Log.e(TAG, "setBackButtonDisabled : " + e);
         }
     }
+
+    @Override
+    public void setBluetoothDisabled(boolean disabled) {
+        Log.i(TAG, "setBluetoothDisabled : " + disabled);
+
+        try {
+            mpm.allowBluetoothDataTransfer(!disabled);
+        } catch (Throwable e) {
+            Log.e(TAG, "setBluetoothDisabled : " + e);
+        }
+    }
 }
