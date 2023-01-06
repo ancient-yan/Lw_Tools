@@ -77,4 +77,15 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
             Log.e(TAG, "setExternalStorageDisabled : " + e);
         }
     }
+
+    @Override
+    public void setGPSDisabled(boolean disabled) {
+        Log.i(TAG, "setGPSDisabled : " + disabled);
+
+        try {
+            mpm.setGps(disabled);
+        } catch (Throwable e) {
+            Log.e(TAG, "setGPSDisabled : " + e);
+        }
+    }
 }
