@@ -1,5 +1,6 @@
 package com.gwchina.child.mdm.core.lw;
 
+import android.app.ActivityManager;
 import android.app.mia.MiaMdmPolicyManager;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
@@ -9,6 +10,8 @@ import android.util.Log;
 
 import com.gwchina.child.mdm.core.glDeviceApplicationManagerImpl;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,10 +39,19 @@ public class lwDeviceApplicationManagerImpl extends glDeviceApplicationManagerIm
     public void killApplicationProcess(String packageName) {
         Log.i(TAG, "killApplicationProcess : " + packageName);
 
+        forceStopPackage(context, packageName);
+    }
+
+    public static void forceStopPackage(Context context, String packageName) {
         try {
-//            mpm.killApp(packageName);
+            ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+            Method method = ActivityManager.class.getDeclaredMethod("forceStopPackage", new Class[]{String.class});
+            method.setAccessible(true);
+            method.invoke(activityManager, new Object[]{packageName});
+        } catch (InvocationTargetException e) {
+            Log.e(TAG, "forceStopPackage.InvocationTargetException : " + e.getCause());
         } catch (Throwable e) {
-            Log.e(TAG, "killApplicationProcess : " + e);
+            Log.e(TAG, "forceStopPackage.Throwable : " + e);
         }
     }
 
@@ -48,7 +60,7 @@ public class lwDeviceApplicationManagerImpl extends glDeviceApplicationManagerIm
         Log.i(TAG, "addDisallowedRunningApp : " + packageNames);
 
         try {
-            for (String packageName : packageNames);
+            for (String packageName : packageNames) ;
 //                DeviceService.getmBinder().setFunctionState(ClientDataParse.testPackage(10001, packageName, 1));
         } catch (Throwable e) {
             Log.e(TAG, "addDisallowedRunningApp : " + e);
@@ -60,7 +72,7 @@ public class lwDeviceApplicationManagerImpl extends glDeviceApplicationManagerIm
         Log.i(TAG, "removeDisallowedRunningApp : " + packageNames);
 
         try {
-            for (String packageName : packageNames);
+            for (String packageName : packageNames) ;
 //                DeviceService.getmBinder().setFunctionState(ClientDataParse.testPackage(10001, packageName, 0));
         } catch (Throwable e) {
             Log.e(TAG, "removeDisallowedRunningApp : " + e);
