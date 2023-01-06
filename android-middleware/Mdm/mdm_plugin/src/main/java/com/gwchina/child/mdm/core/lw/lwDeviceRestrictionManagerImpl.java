@@ -66,4 +66,15 @@ public class lwDeviceRestrictionManagerImpl extends glDeviceRestrictionManagerIm
             Log.e(TAG, "setBluetoothDisabled : " + e);
         }
     }
+
+    @Override
+    public void setExternalStorageDisabled(boolean disabled) {
+        Log.i(TAG, "setExternalStorageDisabled : " + disabled);
+
+        try {
+            mpm.setTFcard(disabled);
+        } catch (Throwable e) {
+            Log.e(TAG, "setExternalStorageDisabled : " + e);
+        }
+    }
 }
