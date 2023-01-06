@@ -11,25 +11,20 @@ android {
     }
 
     signingConfigs {
-        lw {
-            storePassword 'www.txtws.com'
-            keyAlias 'txtw'
-            keyPassword 'www.txtws.com'
-            storeFile file('..\\..\\..\\..\\config\\common.keystore')
-        }
-
-        gl {
-            storePassword 'gwchina.cn831084@@txtws.com'
-            keyAlias 'txtws'
-            keyPassword 'gwchina.cn831084@@txtws.com'
-            storeFile file('..\\..\\..\\..\\config\\Release.jks')
+        lenovo_8304 {
+            storePassword 'www.lenovo.com'
+            keyAlias 'lenovo_8304'
+            keyPassword 'www.lenovo.com'
+            storeFile file('..\\..\\..\\..\\config\\lenovo_8304.keystore')
+            v2SigningEnabled true
+            v1SigningEnabled true
         }
     }
 
     buildTypes {
         release {
             minifyEnabled false
-            signingConfig signingConfigs.gl
+            signingConfig signingConfigs.lenovo_8304
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
 

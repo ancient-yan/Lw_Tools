@@ -22,8 +22,8 @@
 
         <service
             android:name=".DeviceService"
-            android:exported="true"
-            android:permission="com.gwchina.child.mdm.sec.MDM">
+            android:exported="true">
+<!--            android:permission="com.gwchina.child.mdm.sec.MDM">-->
             <intent-filter>
                 <action android:name="com.gwchina.child.mdm.DeviceService" />
             </intent-filter>
