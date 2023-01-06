@@ -35,15 +35,4 @@ public class lwDevicePackageManagerImpl extends glDevicePackageManagerImpl {
             Log.e(TAG, "uninstallPackage : " + e);
         }
     }
-
-    @Override
-    public void clearPackageData(String packageName) {
-        Log.i(TAG, "clearPackageData : " + packageName);
-
-        try {
-//            mpm.clearAppData(packageName);
-        } catch (Throwable e) {
-            Log.e(TAG, "clearPackageData : " + e);
-        }
-    }
 }
