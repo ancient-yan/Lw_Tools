@@ -3,7 +3,6 @@ package com.gwchina.child.mdm.core.lw;
 import android.app.ActivityManager;
 import android.app.mia.MiaMdmPolicyManager;
 import android.content.Context;
-import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.util.Log;
@@ -99,9 +98,18 @@ public class lwDeviceApplicationManagerImpl extends glDeviceApplicationManagerIm
                 .getInstalledPackages(PackageManager.MATCH_UNINSTALLED_PACKAGES);
 
         for (PackageInfo pak : packages)
-            if ((pak.applicationInfo.flags & ApplicationInfo.FLAG_SUSPENDED) > 0)
+            if (!isApplicationEnabled(context, pak.packageName))
                 list.add(pak.packageName);
 
         return list;
+    }
+
+    public static boolean isApplicationEnabled(Context context, String packageName) {
+        int nEnable = context.getPackageManager().getApplicationEnabledSetting(packageName);
+        if (PackageManager.COMPONENT_ENABLED_STATE_DISABLED == nEnable)
+            return false;
+        else if (PackageManager.COMPONENT_ENABLED_STATE_DISABLED_USER == nEnable)
+            return false;
+        return true;
     }
 }
