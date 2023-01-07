@@ -54,18 +54,6 @@
         "screenFlag":0
     },
     {
-        "softName":"格雷盒子",
-        "softIcon":"https://tob-file.qcg.cc/icon/lenovo/com.appwoo.txtw.activity.png",
-        "bundleId":"com.appwoo.txtw.activity",
-        "screenFlag":0
-    },
-    {
-        "softName":"GL2",
-        "softIcon":"https://tob-file.qcg.cc/icon/lenovo/com.gwchina.lssw.child.tools.png",
-        "bundleId":"com.gwchina.lssw.child.tools",
-        "screenFlag":0
-    },
-    {
         "softName":"日历",
         "softIcon":"https://tob-file.qcg.cc/icon/lenovo/cn.etouch.ecalendar.pad.png",
         "bundleId":"cn.etouch.ecalendar.pad",
@@ -102,21 +90,15 @@
         "screenFlag":0
     },
     {
+        "softName":"绿网浏览器",
+        "softIcon":"https://file.qcg.cc/greenguard/gnwf_com.browser.txtw.png",
+        "bundleId":"com.browser.txtw",
+        "screenFlag":0
+    },
+    {
         "softName":"文件管理器",
         "softIcon":"https://tob-file.qcg.cc/icon/lenovo/lenovo.filemanager.png",
         "bundleId":"lenovo.filemanager",
         "screenFlag":0
-    },
-    {
-        "softName":"海豚提",
-        "softIcon":"https://tob-file.qcg.cc/icon/lenovo/uclass.mainbo.com.precisedata.png",
-        "bundleId":"uclass.mainbo.com.precisedata",
-        "screenFlag":0
-    },
-    {
-        "softName":"调试工具",
-        "softIcon":"https://tob-file.qcg.cc/icon/lenovo/com.appwoo.txtw.activity.png",
-        "bundleId":"com.appwoo.txtw.activity",
-        "screenFlag":0
-    },
+    }
 ]
