@@ -17,12 +17,10 @@ import java.util.List;
 
 public class lwDeviceApplicationManagerImpl extends glDeviceApplicationManagerImpl {
     MiaMdmPolicyManager mpm;
-    private PackageManager mPackageManager;
     Context context;
 
     public lwDeviceApplicationManagerImpl(MiaMdmPolicyManager mpm, Context context) {
         this.mpm = mpm;
-        mPackageManager = context.getPackageManager();
         this.context = context;
     }
 
@@ -159,12 +157,18 @@ public class lwDeviceApplicationManagerImpl extends glDeviceApplicationManagerIm
 
     @Override
     public void setComponentEnabled(ComponentName componentName, boolean enable) {
+        setComponentEnabled(context, componentName, enable);
+    }
+
+    public static void setComponentEnabled(Context context, ComponentName componentName, boolean bEnabled) {
+        int newState;
+        if (bEnabled) newState = PackageManager.COMPONENT_ENABLED_STATE_ENABLED;
+        else newState = PackageManager.COMPONENT_ENABLED_STATE_DISABLED;
+
         try {
-            mPackageManager.setComponentEnabledSetting(componentName,
-                    enable ? PackageManager.COMPONENT_ENABLED_STATE_ENABLED : PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
-                    PackageManager.DONT_KILL_APP);
+            context.getPackageManager().setComponentEnabledSetting(componentName, newState, PackageManager.DONT_KILL_APP);
         } catch (Throwable e) {
-            Log.e(TAG, "setComponentEnabled : " + e);
+            Log.e(TAG, "Throwable : " + e);
         }
     }
 }

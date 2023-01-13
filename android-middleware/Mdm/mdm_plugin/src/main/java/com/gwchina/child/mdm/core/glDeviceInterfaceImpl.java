@@ -57,7 +57,7 @@ public class glDeviceInterfaceImpl extends AbstractDeviceInterfaceImpl {
 
         mDeviceControlManager = new lwDeviceControlManagerImpl(mpm, context);
         mDeviceRestrictionManager = new lwDeviceRestrictionManagerImpl(mpm);
-        mDeviceSettingsManager = new lwDeviceSettingsManagerImpl(mpm);
+        mDeviceSettingsManager = new lwDeviceSettingsManagerImpl(mpm, context);
         mDeviceApplicationManager = new lwDeviceApplicationManagerImpl(mpm, context);
         mDevicePackageManager = new lwDevicePackageManagerImpl(mpm);
         mDeviceTelephonyManager = new lwDeviceTelephonyManagerImpl(mpm, context);
